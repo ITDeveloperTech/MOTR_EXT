@@ -1,0 +1,25 @@
+{
+   "manifest_version": 3,
+   "name": "MOTR EXT",
+   "version": "1.0.0",
+   "description": "MOTR additional functions",
+   "author": "Gecko",
+   "icons": {
+      "48": "img/icons/icon.png"
+   },
+   "action": {
+      "default_popup": "popup.html"
+   },
+   "permissions": [
+      "scripting",
+      "tabs",
+      "storage"
+   ],
+   "background": {
+      "service_worker": "js/background.js",
+      "type": "module"
+   },
+   "host_permissions": [
+      "https://*.motr-online.com/*"
+   ]
+}

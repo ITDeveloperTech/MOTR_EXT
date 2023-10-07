@@ -1,0 +1,194 @@
+@import "reset.scss";
+@import "fonts.scss";
+
+body {
+   font-family: "Helvetica-Neue";
+   font-weight: 300;
+   height: auto;
+   display: flex;
+   font-size: 14px;
+   justify-content: center;
+   background: black;
+}
+
+.container {
+   width: 300px;
+   background: white;
+}
+
+header {
+   width: 100%;
+   padding: 0.75em 1em 0.75em;
+   background: #acd4e3;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   & > h1 {
+      font-family: "REM";
+      font-size: 1.5em;
+      font-weight: 700;
+      filter:  drop-shadow(-1px 0 0 #fff)
+               drop-shadow(1px 0 0 #fff)
+               drop-shadow(0 -1px 0 #fff)
+               drop-shadow(0 1px 0 #fff);
+   }
+   & > img.logo {
+      width: 1.45em;
+      height: 1.45em;
+      margin-right: 0.3em;
+   }
+}
+
+.content-page {
+   width: 100%;
+   & > .title {
+      display: inline-block;
+      font-size: 18px;
+      font-weight: 500;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0.75em 0;
+   }
+}
+
+.settings-group {
+   width: 100%;
+   & > * {
+      padding: 0 1em 0; 
+   }
+
+   .title {
+      width: 100%;
+      border: 0;
+      font-size: 1.2em;
+      cursor: pointer;
+      background: #ffeed9;
+      height: 2em;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      &:hover, &.active {
+         background: #f7dcba;
+      }
+      &::after {
+         content: "\002B";
+         color: inherit;
+         font-weight: 900;
+         float: right;
+      }
+      &.active::after {
+         content: "\2212";
+      }
+   }
+
+   & > .content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.2s ease-out;
+      background-color: #f1f1f1;
+      & > *:first-child {
+         padding-top: 1em;
+      }
+      & > *:last-child {
+         padding-bottom: 1em;
+      }
+      ul.settings-list > li {
+         margin-bottom: 5px;
+         &:last-child {
+            margin-bottom: 0;
+         }
+      }
+   }
+}
+
+.checkbox {
+   --background: inherit;
+   --border: #d1d6ee;
+   --border-hover: #bbc1e1;
+   --border-active: #1e2235;
+   --tick: #fff;
+   position: relative;
+   display: flex;
+   input, svg {
+      justify-self: center;
+      width: 21px;
+      height: 21px;
+      display: block;
+   }
+   input {
+      appearance: none;
+      position: relative;
+      outline: none;
+      background: var(--background);
+      border: none;
+      margin: 0;
+      padding: 0;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: box-shadow .3s;
+      box-shadow: inset 0 0 0 var(--s, 1px) var(--b, var(--border));
+      &:hover {
+         --s: 2px;
+         --b: var(--border-hover);
+      }
+      &:checked {
+         --b: var(--border-active);
+      }
+   }
+   svg {
+      pointer-events: none;
+      fill: none;
+      stroke-width: 2px;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke: var(--stroke, var(--border-active));
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 21px;
+      height: 21px;
+      transform: scale(var(--scale, 1)) translateZ(0);
+   }
+   &.bounce {
+      --stroke: var(--tick);
+      input {
+         &:checked {
+            --s: 11px;
+            & + svg {
+               animation: bounce .4s linear forwards .2s;
+            }
+         }
+      }
+      svg {
+         --scale: 0;
+      }
+   }
+   @keyframes bounce {
+      50% {
+         transform: scale(1.2);
+      }
+      75% {
+         transform: scale(0.9);
+      }
+      100% {
+         transform: scale(1);
+      }
+   }
+
+   & > span {
+      position: absolute;
+      left: 30px;
+      align-self: center;
+   }
+}
+
+footer {
+   width: 100%;
+   background-color: #303b44;
+   padding: 10px 15px 10px;
+   p {
+      color: #bbcdd6;
+      font-size: 0.85em;
+   }
+}
