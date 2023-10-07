@@ -13,13 +13,29 @@ function createTag(tagName, tagClasses, inner) {
    return tag;
 }
 
+async function getLocalStorage() {
+   let obj = await chrome.storage.local.get("motr_settings");
+   return obj.motr_settings;
+}
+
 class AddMobInfo {
    mobInfo = {};
    mobStatTags = undefined;
 
    constructor() {
       this.getMobInfo();
-      this.run();
+      getLocalStorage().then(motr_settings => {
+         for (let key in motr_settings) {
+            let flag = motr_settings[key];
+            if (flag) {
+               switch (key) {
+                  case 'ms_mobs_info':
+                     this.change();
+                     break;
+               }
+            }
+         }
+      });
    }
 
    getMobInfo() {
@@ -87,13 +103,6 @@ class AddMobInfo {
       }
    }
 
-   check() {
-      // this.mobStatBodyTag
-
-      // let mobImageTag = this.mobStatBodyTag.querySelector("tr:nth-child(2) > td:nth-child(1)");
-      
-   }
-
    change() {
       let mobImageTag = this.mobStatBodyTag.querySelector("tr:nth-child(2) > td:nth-child(1)");
 
@@ -109,11 +118,6 @@ class AddMobInfo {
       let emptyValueTag = createTag("td", ["td_v1_left"], []);
       let rowTag = createTag("tr", [], [fleeTag, fleeValueTag, hitTag, hitValueTag, emptyTag, emptyValueTag]);
       this.mobStatBodyTag.appendChild(rowTag);
-   }
-
-   run() {
-      this.check();
-      this.change();
    }
 }
 

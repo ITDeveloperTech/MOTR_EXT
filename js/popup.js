@@ -1,5 +1,6 @@
 const m_settings = {
    "ms_mobs_info": false,
+   "ms_image_replace": false,
    "ms_mobs_item_steal": false
 }
 
