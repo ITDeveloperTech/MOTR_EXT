@@ -41,6 +41,9 @@ class ImageReplacer {
          if (document.location.href.indexOf("https://motr-online.com/database/cards/") >= 0) {
             this.replaceCard();
          }
+         if (document.location.href.indexOf("https://motr-online.com/database/wearables/") >= 0) {
+            this.replaceWearable();
+         }
       });
    }
 
@@ -172,6 +175,31 @@ class ImageReplacer {
          let id = splashes_split[splashes_split.length - 1];
          let image = createTag("img", [], []);
          image.src = "https://static.divine-pride.net/images/items/cards/" + id + ".png";
+         image.alt = itemImageTag.innerText;
+         itemImageTag.innerHTML = "";
+         itemImageTag.appendChild(image);
+      }
+
+      let itemImageTags = document.querySelectorAll("td > table.tabl1 > tbody > tr > td:nth-child(1) > a.alllink");
+      for (let itemImageTag of itemImageTags) {
+         let td = itemImageTag.parentElement;
+         let splashes_split = itemImageTag.href.split("/");
+         let id = splashes_split[splashes_split.length - 1];
+         let image = createTag("img", [], []);
+         image.src = "https://db.irowiki.org/image/monster/" + id + ".png";
+         image.height = 48;
+         itemImageTag.innerHTML = "";
+         itemImageTag.appendChild(image);
+      }
+   }
+
+   replaceWearable() {
+      let itemImageTag = document.querySelector("table.tabl1 > tbody > tr:nth-child(2) > td");
+      if (itemImageTag !== undefined) {
+         let splashes_split = document.location.href.split("/");
+         let id = splashes_split[splashes_split.length - 1];
+         let image = createTag("img", [], []);
+         image.src = "https://www.divine-pride.net/img/items/collection/iRO/" + id;
          image.alt = itemImageTag.innerText;
          itemImageTag.innerHTML = "";
          itemImageTag.appendChild(image);
