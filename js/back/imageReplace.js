@@ -53,6 +53,7 @@ class ImageReplacer {
          let image = createTag("img", [], []);
          let id = Number.parseInt(document.location.href.replace("https://motr-online.com/database/monsters/", ""));
          image.src = "https://db.irowiki.org/image/monster/" + id + ".png";
+         image.srcset = "https://static.divine-pride.net/images/mobs/png/" + id + ".png";
          image.alt = document.querySelector("table.tableBord > tbody > tr:nth-child(1) > td:nth-child(1)").innerText;
          mobTdTag.removeChild(mobTdTag.childNodes[0]);
          mobTdTag.appendChild(image);
@@ -104,12 +105,13 @@ class ImageReplacer {
          let splashes_split = imgTag.src.split("/");
          let id = splashes_split[splashes_split.length - 1].split(".")[0];
          let src = ""
+         let image = createTag("img", [], []);
          if (imgTag.src.indexOf("/item") >= 0) {
             src = "https://www.divine-pride.net/img/items/item/iRO/" + id;
          } else if (imgTag.src.indexOf("/monster") >= 0) {
             src = "https://db.irowiki.org/image/monster/" + id + ".png";
+            image.srcset = "https://static.divine-pride.net/images/mobs/png/" + id + ".png"
          }
-         let image = createTag("img", [], []);
          image.src = src;
          image.alt = td.children[0].innerText;
          td.replaceChild(image, imgTag);
@@ -135,6 +137,7 @@ class ImageReplacer {
          let id = splashes_split[splashes_split.length - 1];
          let image = createTag("img", [], []);
          image.src = "https://db.irowiki.org/image/monster/" + id + ".png";
+         image.srcset = "https://static.divine-pride.net/images/mobs/png/" + id + ".png";
          image.height = 48;
          itemImageTag.innerHTML = "";
          itemImageTag.appendChild(image);
@@ -150,6 +153,7 @@ class ImageReplacer {
          let image = createTag("img", [], []);
          if (mobImageTag.src.indexOf("/monster") >= 0) {
             image.src = "https://db.irowiki.org/image/monster/" + id;
+            image.srcset = "https://static.divine-pride.net/images/mobs/png/" + id;
          } else {
             image.src = "https://www.divine-pride.net/img/map/original/" + id.split(".")[0];
          }
@@ -187,6 +191,7 @@ class ImageReplacer {
          let id = splashes_split[splashes_split.length - 1];
          let image = createTag("img", [], []);
          image.src = "https://db.irowiki.org/image/monster/" + id + ".png";
+         image.srcset = "https://static.divine-pride.net/images/mobs/png/" + id + ".png";
          image.height = 48;
          itemImageTag.innerHTML = "";
          itemImageTag.appendChild(image);
@@ -212,6 +217,7 @@ class ImageReplacer {
          let id = splashes_split[splashes_split.length - 1];
          let image = createTag("img", [], []);
          image.src = "https://db.irowiki.org/image/monster/" + id + ".png";
+         image.srcset = "https://static.divine-pride.net/images/mobs/png/" + id + ".png";
          image.height = 48;
          itemImageTag.innerHTML = "";
          itemImageTag.appendChild(image);
