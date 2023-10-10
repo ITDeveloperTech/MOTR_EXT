@@ -44,6 +44,9 @@ class ImageReplacer {
          if (document.location.href.indexOf("https://motr-online.com/database/wearables/") >= 0) {
             this.replaceWearable();
          }
+         if (document.location.href.indexOf("https://motr-online.com/members/charinfo/invertory/") >= 0) {
+            this.replaceCharItems();
+         }
       });
    }
 
@@ -223,9 +226,18 @@ class ImageReplacer {
          itemImageTag.appendChild(image);
       }
    }
+
+   replaceCharItems() {
+      let imgTags = document.querySelectorAll(".top2 td img, .top1 td img");
+      for (let imgTag of imgTags) {
+         let splits = imgTag.src.split("/")
+         let id = splits[splits.length - 1].split(".")[0];
+         imgTag.src = "https://www.divine-pride.net/img/items/item/iRO/" + id;
+      }
+   }
 }
 
-if (document.readyState == "complete") {
+if ((document.readyState == "complete") || (document.readyState == "interactive")) {
    let replace = new ImageReplacer();
 } else {
    document.addEventListener("DOMContentLoaded", () => {
