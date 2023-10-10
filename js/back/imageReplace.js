@@ -161,7 +161,7 @@ class ImageReplacer {
          let splashes_split = document.location.href.split("/");
          let id = splashes_split[splashes_split.length - 1];
          mainMapImgTag.src = "https://www.divine-pride.net/img/map/original/" + id;
-         td.style.verticalAlign = "top";
+         mainMapImgTag.parentElement.style.verticalAlign = "top";
       }
    }
 

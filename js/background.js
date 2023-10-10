@@ -5,8 +5,9 @@ async function getLocalStorage() {
 
 chrome.tabs.onUpdated.addListener(
    (tabId, changeInfo, tab) => {
+      console.log(changeInfo);
       if (changeInfo.status != undefined) {
-         if (changeInfo.status == "complete") {
+         if (changeInfo.status == "loading") {
             if (tab.url.indexOf("https://motr-online.com/database/monsters/") >= 0) {
                getLocalStorage().then(result => {
                   for(let key in result) {
@@ -44,6 +45,12 @@ chrome.tabs.onUpdated.addListener(
                               {
                                  target: { tabId: tabId },
                                  files: ["js/back/imageReplace.js"]
+                              });
+                        case "ms_vending_navi_clipboard":
+                           chrome.scripting.executeScript(
+                              {
+                                 target: { tabId: tabId },
+                                 files: ["js/back/vendingInfo.js"]
                               });
                         break;
                      }
