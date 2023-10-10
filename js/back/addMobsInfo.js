@@ -23,6 +23,7 @@ class AddMobInfo {
    mobStatTags = undefined;
 
    constructor() {
+      this.initializeCSS();
       this.getMobInfo();
       if (this.mobInfo === null) {
          return;
@@ -39,6 +40,19 @@ class AddMobInfo {
             }
          }
       });
+   }
+
+   initializeCSS() {
+      document.styleSheets[0].insertRule(`
+         @keyframes motrSettingsNewPulse {
+            50% { background: #E1ECF5;}
+         }
+      `);
+      document.styleSheets[0].insertRule(`
+         .motrSettings-newPulse {
+            animation: motrSettingsNewPulse ease-in 0.75s normal;
+         }
+      `);
    }
 
    getMobInfo() {
@@ -117,10 +131,10 @@ class AddMobInfo {
       this.mobInfo.superHit = 200 + this.mobInfo.bLvl + this.mobInfo.agi + Math.floor(this.mobInfo.luk / 3.0);
 
       mobImageTag.rowSpan = 10;
-      let fleeTag = createTag("td", ["td_h1_left"], ["95% Flee"]);
-      let fleeValueTag = createTag("td", ["td_v1_left"], [this.mobInfo.superFlee.toString()]);
-      let hitTag = createTag("td", ["td_h1_left"], ["100% Hit"]);
-      let hitValueTag = createTag("td", ["td_v1_left"], [this.mobInfo.superHit.toString()]);
+      let fleeTag = createTag("td", ["td_h1_left", "motrSettings-newPulse"], ["95% Flee"]);
+      let fleeValueTag = createTag("td", ["td_v1_left", "motrSettings-newPulse"], [this.mobInfo.superFlee.toString()]);
+      let hitTag = createTag("td", ["td_h1_left", "motrSettings-newPulse"], ["100% Hit"]);
+      let hitValueTag = createTag("td", ["td_v1_left", "motrSettings-newPulse"], [this.mobInfo.superHit.toString()]);
       let emptyTag = createTag("td", ["td_h1_left"], []);
       let emptyValueTag = createTag("td", ["td_v1_left"], []);
       let rowTag = createTag("tr", [], [fleeTag, fleeValueTag, hitTag, hitValueTag, emptyTag, emptyValueTag]);
