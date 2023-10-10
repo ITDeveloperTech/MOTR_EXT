@@ -19,31 +19,34 @@ async function getLocalStorage() {
 }
 
 class ImageReplacer {
+   funcsMap = undefined;
    constructor() {
+      this.mapGenerator();
       getLocalStorage().then(motr_settings => {
          if (motr_settings["ms_image_replace"]) {
-            if (document.location.href.indexOf("https://motr-online.com/database/monsters/") >= 0) {
-               this.replaceMob();
+            for (let [key, value] of this.funcsMap) {
+               this.funcMatcher(key, value);
             }
          }
-         if (document.location.href.indexOf("https://motr-online.com/members/vendingstat") >= 0) {
-            this.replaceVending();
-         }
-         if (document.location.href.indexOf("https://motr-online.com/database/quicksearch") >= 0) {
-            this.replaceQuickSearch();
-         }
-         if ((document.location.href.indexOf("https://motr-online.com/database/items/") >= 0) ||
-            (document.location.href.indexOf("https://motr-online.com/database/cards/") >= 0) ||
-            (document.location.href.indexOf("https://motr-online.com/database/wearables/") >= 0)) {
-            this.replaceItem();
-         }
-         if (document.location.href.indexOf("https://motr-online.com/database/maps/") >= 0) {
-            this.replaceMap();
-         }
-         if (document.location.href.indexOf("https://motr-online.com/members/charinfo/invertory/") >= 0) {
-            this.replaceCharItems();
-         }
       });
+   }
+
+   mapGenerator() {
+      this.funcsMap = new Map();
+      this.funcsMap.set("https://motr-online.com/database/monsters/", this.replaceMob);
+      this.funcsMap.set("https://motr-online.com/members/vendingstat", this.replaceVending);
+      this.funcsMap.set("https://motr-online.com/database/quicksearch", this.replaceQuickSearch);
+      this.funcsMap.set("https://motr-online.com/database/items/", this.replaceItem);
+      this.funcsMap.set("https://motr-online.com/database/cards/", this.replaceItem);
+      this.funcsMap.set("https://motr-online.com/database/wearables/", this.replaceItem);
+      this.funcsMap.set("https://motr-online.com/database/maps/", this.replaceMap);
+      this.funcsMap.set("https://motr-online.com/members/charinfo/invertory/", this.replaceCharItems);
+   }
+
+   funcMatcher(href, func) {
+      if (document.location.href.indexOf(href) >= 0) {
+         func.call();
+      }
    }
 
    replaceMob() {
