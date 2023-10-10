@@ -45,7 +45,7 @@ class AddMobInfo {
    initializeCSS() {
       document.styleSheets[0].insertRule(`
          @keyframes motrSettingsNewPulse {
-            50% { background: #E1ECF5;}
+            50% { background: #E2AEE4;}
          }
       `);
       document.styleSheets[0].insertRule(`
