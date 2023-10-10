@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>MOTR EXT</title>
    <link rel="stylesheet" type="text/css" href="css/popup.css">
 </head>
+
 <body>
    <div class="container">
       <header>
@@ -14,6 +16,24 @@
       </header>
       <div class="content-page">
          <div class="title">Настройки</div>
+         <div class="settings-group collapse">
+            <button class="title">
+               Общее
+            </button>
+            <div class="content">
+               <ul class="settings-list">
+                  <li>
+                     <label class="checkbox bounce">
+                        <input type="checkbox" name="ms_image_replace">
+                        <svg viewBox="0 0 21 21">
+                           <polyline points="5 10.75 8.5 14.25 16 6"></polyline>
+                        </svg>
+                        <span>Заменять "битые" картинки</span>
+                     </label>
+                  </li>
+               </ul>
+            </div>
+         </div>
          <div class="settings-group collapse">
             <button class="title">
                Мобы
@@ -30,17 +50,7 @@
                      </label>
                   </li>
 
-                  <li>
-                     <label class="checkbox bounce">
-                        <input type="checkbox" name="ms_image_replace">
-                        <svg viewBox="0 0 21 21">
-                           <polyline points="5 10.75 8.5 14.25 16 6"></polyline>
-                        </svg>
-                        <span>Заменять "битые" картинки</span>
-                     </label>
-                  </li>
-
-                  <li>
+                  <!-- <li>
                      <label class="checkbox bounce">
                         <input type="checkbox" name="ms_mobs_item_steal">
                         <svg viewBox="0 0 21 21">
@@ -48,7 +58,7 @@
                         </svg>
                         <span>Просчёт кражи на предметах моба</span>
                      </label>
-                  </li>
+                  </li> -->
                </ul>
             </div>
          </div>
@@ -77,4 +87,5 @@
    </div>
    <script src="js/popup.js"></script>
 </body>
+
 </html>
