@@ -129,10 +129,12 @@ class ImageReplacer {
          image.src = "https://db.irowiki.org/image/monster/" + id + ".png";
          image.onerror = (event) => { event.onerror = undefined; event.target.src = "https://static.divine-pride.net/images/mobs/png/" + id + ".png" };
          image.alt = itemImageTag.innerText;
-         image.maxWidth = 48;
-         image.height = 48;
+         image.style.maxWidth = "48";
+         image.style.maxHeight = "48";
          image.style.verticalAlign = "middle";
          itemImageTag.replaceChild(image, itemImageTag.childNodes[0]);
+         let td = itemImageTag.parentElement;
+         td.style.height = "50";
       }
    }
 
@@ -144,12 +146,12 @@ class ImageReplacer {
          if (mob_mapTag.src.indexOf("/monster") >= 0) {
             mob_mapTag.src = "https://db.irowiki.org/image/monster/" + id;
             mob_mapTag.onerror = (event) => { event.onerror = undefined; event.target.src = "https://static.divine-pride.net/images/mobs/png/" + id };
-            mob_mapTag.maxWidth = "52";
-            mob_mapTag.style.height = "52";
+            mob_mapTag.style.maxWidth = "50";
+            mob_mapTag.style.maxHeight = "50";
          } else {
             mob_mapTag.src = "https://www.divine-pride.net/img/map/original/" + id.split(".")[0];
-            mob_mapTag.maxWidth = "100";
-            mob_mapTag.style.height = "100";
+            mob_mapTag.style.maxWidth = "100";
+            mob_mapTag.style.maxHeight = "100";
          }
          mob_mapTag.style.verticalAlign = "middle";
       }
