@@ -24,6 +24,9 @@ class AddMobInfo {
 
    constructor() {
       this.getMobInfo();
+      if (this.mobInfo === null) {
+         return;
+      }
       getLocalStorage().then(motr_settings => {
          for (let key in motr_settings) {
             let flag = motr_settings[key];
@@ -40,6 +43,10 @@ class AddMobInfo {
 
    getMobInfo() {
       let mobStatBodyTag = document.querySelector("table.tableBord > tbody");
+      if (mobStatBodyTag === null) {
+         this.mobInfo = null;
+         return;
+      }
       let mobStatTags = {
          bLvl: mobStatBodyTag.querySelector("tr:nth-child(1) td:nth-child(3)"),
          size: mobStatBodyTag.querySelector("tr:nth-child(2) td:nth-child(2)"),

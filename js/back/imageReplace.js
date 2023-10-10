@@ -52,139 +52,124 @@ class ImageReplacer {
 
    replaceMob() {
       let mobTdTag = document.querySelector("table.tableBord > tbody > tr:nth-child(2) > td:nth-child(1)");
-      if (mobTdTag.childNodes[0].nodeType == 3) {
-         let image = createTag("img", [], []);
-         let id = Number.parseInt(document.location.href.replace("https://motr-online.com/database/monsters/", ""));
-         image.src = "https://db.irowiki.org/image/monster/" + id + ".png";
-         image.onerror = (event) => {event.onerror = undefined; event.target.src = "https://static.divine-pride.net/images/mobs/png/" + id + ".png"};
-         image.alt = document.querySelector("table.tableBord > tbody > tr:nth-child(1) > td:nth-child(1)").innerText;
-         mobTdTag.removeChild(mobTdTag.childNodes[0]);
-         mobTdTag.appendChild(image);
-      }
-
-      let dropItemsTag = document.querySelector("#drop_mode_text").nextElementSibling.nextElementSibling.querySelectorAll("table > tbody > tr > td.td_v1_center:nth-child(1)");
-      let tdName = undefined;
-      for (let td of dropItemsTag) {
-         if (td.children[0].tagName == "A") {
-            let splashes_split = td.children[0].href.split("/");
-            let id = splashes_split[splashes_split.length - 1];
+      if (mobTdTag !== null) {
+         if (mobTdTag.childNodes[0].nodeType == 3) {
             let image = createTag("img", [], []);
-            image.src = "https://www.divine-pride.net/img/items/item/iRO/" + id;
-            image.alt = td.children[0].innerText;
-            td.removeChild(td.children[0]);
-            td.appendChild(image);
+            let splits = document.location.href.split("/");
+            let id = splits[splits.length - 1];
+            image.src = "https://db.irowiki.org/image/monster/" + id + ".png";
+            image.onerror = (event) => { event.onerror = undefined; event.target.src = "https://static.divine-pride.net/images/mobs/png/" + id + ".png" };
+            image.alt = document.querySelector("table.tableBord > tbody > tr:nth-child(1) > td:nth-child(1)").innerText;
+            mobTdTag.replaceChild(image, mobTdTag.childNodes[0]);
          }
-         tdName = td;
       }
 
-      if (tdName.nextElementSibling.innerText.indexOf("Карта") >= 0) {
-         let linkTag = tdName.nextElementSibling.children[0];
-         if (linkTag.tagName == "A") {
-            linkTag.href = linkTag.href.replace("/items", "/cards");
-         }
+      let dropItemsTag = document.querySelectorAll("table.tabl1:nth-child(1) td:nth-child(1) > a.alllink");
+      for (let imgTag of dropItemsTag) {
+         let splashes_split = imgTag.href.split("/");
+         let id = splashes_split[splashes_split.length - 1];
+         let image = createTag("img", [], []);
+         image.src = "https://www.divine-pride.net/img/items/item/iRO/" + id;
+         image.alt = imgTag.innerText;
+         image.style.verticalAlign = "middle";
+         let td = imgTag.parentElement;
+         td.replaceChild(image, imgTag);
       }
    }
 
    replaceVending() {
       let imgTags = document.querySelectorAll("table.tableBord td > img, table.tableBord td > a > img");
       for (let imgTag of imgTags) {
-         let td = imgTag.parentElement;
          let splashes_split = imgTag.src.split("/");
          let id = splashes_split[splashes_split.length - 1].split(".")[0];
-         let image = createTag("img", [], []);
-         image.src = "https://www.divine-pride.net/img/items/item/iRO/" + id;
-         image.alt = td.children[0].innerText;
-         td.replaceChild(image, imgTag);
+         imgTag.src = "https://www.divine-pride.net/img/items/item/iRO/" + id;
+         imgTag.style.verticalAlign = "middle";
       }
    }
 
    replaceQuickSearch() {
-      if (document.querySelector("h4").parentElement.querySelectorAll("table")[1] === undefined) {
+      let allTables = document.querySelectorAll(".mainItemCell > table table");
+      if (allTables.length < 2) {
          return;
       }
-      let imgTags = document.querySelector("h4").parentElement.querySelectorAll("table")[1].querySelectorAll("tbody > tr a > img");
+      let imgTags = allTables[1].querySelectorAll("tbody > tr a > img");
       for (let imgTag of imgTags) {
-         let td = imgTag.parentElement;
          let splashes_split = imgTag.src.split("/");
          let id = splashes_split[splashes_split.length - 1].split(".")[0];
-         let src = ""
-         let image = createTag("img", [], []);
          if (imgTag.src.indexOf("/item") >= 0) {
-            src = "https://www.divine-pride.net/img/items/item/iRO/" + id;
+            imgTag.src = "https://www.divine-pride.net/img/items/item/iRO/" + id;
          } else if (imgTag.src.indexOf("/monster") >= 0) {
-            src = "https://db.irowiki.org/image/monster/" + id + ".png";
-            image.onerror = (event) => {event.onerror = undefined; event.target.src = "https://static.divine-pride.net/images/mobs/png/" + id + ".png"};
+            imgTag.src = "https://db.irowiki.org/image/monster/" + id + ".png";
+            imgTag.onerror = (event) => { event.onerror = undefined; event.target.src = "https://static.divine-pride.net/images/mobs/png/" + id + ".png" };
          }
-         image.src = src;
-         image.alt = td.children[0].innerText;
-         td.replaceChild(image, imgTag);
+         imgTag.style.verticalAlign = "middle";
       }
    }
 
    replaceItem() {
       let itemImageTag = document.querySelector("table.tabl1 > tbody > tr:nth-child(2) > td");
-      if (itemImageTag !== undefined) {
+      if (itemImageTag !== null) {
          let splashes_split = document.location.href.split("/");
          let id = splashes_split[splashes_split.length - 1];
          let image = createTag("img", [], []);
          image.src = "https://www.divine-pride.net/img/items/collection/iRO/" + id;
          image.alt = itemImageTag.innerText;
-         itemImageTag.innerHTML = "";
-         itemImageTag.appendChild(image);
+         image.style.verticalAlign = "middle";
+         itemImageTag.replaceChild(image, itemImageTag.childNodes[0]);
       }
 
       let itemImageTags = document.querySelectorAll("td > table.tabl1 > tbody > tr > td:nth-child(1) > a.alllink");
       for (let itemImageTag of itemImageTags) {
-         let td = itemImageTag.parentElement;
          let splashes_split = itemImageTag.href.split("/");
          let id = splashes_split[splashes_split.length - 1];
          let image = createTag("img", [], []);
          image.src = "https://db.irowiki.org/image/monster/" + id + ".png";
-         image.onerror = (event) => {event.onerror = undefined; event.target.src = "https://static.divine-pride.net/images/mobs/png/" + id + ".png"};
+         image.onerror = (event) => { event.onerror = undefined; event.target.src = "https://static.divine-pride.net/images/mobs/png/" + id + ".png" };
+         image.alt = itemImageTag.innerText;
+         image.maxWidth = 48;
          image.height = 48;
-         itemImageTag.innerHTML = "";
-         itemImageTag.appendChild(image);
+         image.style.verticalAlign = "middle";
+         itemImageTag.replaceChild(image, itemImageTag.childNodes[0]);
       }
    }
 
    replaceMap() {
-      let mobImageTags = document.querySelectorAll("table.tabl1 > tbody > tr > td > img");
-      for (let mobImageTag of mobImageTags) {
-         let td = mobImageTag.parentElement;
-         let splashes_split = mobImageTag.src.split("/");
+      let mob_mapsImgTags = document.querySelectorAll("table.tabl1 > tbody > tr > td > img");
+      for (let mob_mapTag of mob_mapsImgTags) {
+         let splashes_split = mob_mapTag.src.split("/");
          let id = splashes_split[splashes_split.length - 1];
-         let image = createTag("img", [], []);
-         if (mobImageTag.src.indexOf("/monster") >= 0) {
-            image.src = "https://db.irowiki.org/image/monster/" + id;
-            image.onerror = (event) => {event.onerror = undefined; event.target.src = "https://static.divine-pride.net/images/mobs/png/" + id};
+         if (mob_mapTag.src.indexOf("/monster") >= 0) {
+            mob_mapTag.src = "https://db.irowiki.org/image/monster/" + id;
+            mob_mapTag.onerror = (event) => { event.onerror = undefined; event.target.src = "https://static.divine-pride.net/images/mobs/png/" + id };
+            mob_mapTag.maxWidth = "52";
+            mob_mapTag.style.height = "52";
          } else {
-            image.src = "https://www.divine-pride.net/img/map/original/" + id.split(".")[0];
+            mob_mapTag.src = "https://www.divine-pride.net/img/map/original/" + id.split(".")[0];
+            mob_mapTag.maxWidth = "100";
+            mob_mapTag.style.height = "100";
          }
-         image.style.maxHeight = "160";
-         td.replaceChild(image, mobImageTag);
+         mob_mapTag.style.verticalAlign = "middle";
       }
 
-
-      let divAlignTag = document.querySelectorAll("table.tabl1")[0].parentElement.nextElementSibling.children[0];
-      let td = divAlignTag.parentElement;
-      let splashes_split = document.location.href.split("/");
-      let id = splashes_split[splashes_split.length - 1];
-      let image = createTag("img", [], []);
-      image.src = "https://www.divine-pride.net/img/map/original/" + id;
-      td.replaceChild(image, divAlignTag);
-      td.style.verticalAlign = "top";
+      let mainMapImgTag = document.querySelector("div[align=center] div[align=center] > table > tbody > tr > td:nth-child(2) img");
+      if (mainMapImgTag !== null) {
+         let splashes_split = document.location.href.split("/");
+         let id = splashes_split[splashes_split.length - 1];
+         mainMapImgTag.src = "https://www.divine-pride.net/img/map/original/" + id;
+         td.style.verticalAlign = "top";
+      }
    }
 
    replaceCard() {
       let itemImageTag = document.querySelector("table.tabl1 > tbody > tr:nth-child(2) > td");
-      if (itemImageTag !== undefined) {
+      if (itemImageTag !== null) {
          let splashes_split = document.location.href.split("/");
          let id = splashes_split[splashes_split.length - 1];
          let image = createTag("img", [], []);
          image.src = "https://static.divine-pride.net/images/items/cards/" + id + ".png";
          image.alt = itemImageTag.innerText;
-         itemImageTag.innerHTML = "";
-         itemImageTag.appendChild(image);
+         image.style.verticalAlign = "middle";
+         itemImageTag.replaceChild(image, itemImageTag.childNodes[0]);
       }
 
       let itemImageTags = document.querySelectorAll("td > table.tabl1 > tbody > tr > td:nth-child(1) > a.alllink");
@@ -194,36 +179,38 @@ class ImageReplacer {
          let id = splashes_split[splashes_split.length - 1];
          let image = createTag("img", [], []);
          image.src = "https://db.irowiki.org/image/monster/" + id + ".png";
-         image.onerror = (event) => {event.onerror = undefined; event.target.src = "https://static.divine-pride.net/images/mobs/png/" + id + ".png"};
+         image.onerror = (event) => { event.onerror = undefined; event.target.src = "https://static.divine-pride.net/images/mobs/png/" + id + ".png" };
+         image.alt = itemImageTag.innerText;
+         image.maxWidth = 48;
          image.height = 48;
-         itemImageTag.innerHTML = "";
-         itemImageTag.appendChild(image);
+         image.verticalAlign = "middle";
+         td.replaceChild(image, itemImageTag);
       }
    }
 
    replaceWearable() {
       let itemImageTag = document.querySelector("table.tabl1 > tbody > tr:nth-child(2) > td");
-      if (itemImageTag !== undefined) {
+      if (itemImageTag !== null) {
          let splashes_split = document.location.href.split("/");
          let id = splashes_split[splashes_split.length - 1];
          let image = createTag("img", [], []);
          image.src = "https://www.divine-pride.net/img/items/collection/iRO/" + id;
          image.alt = itemImageTag.innerText;
-         itemImageTag.innerHTML = "";
-         itemImageTag.appendChild(image);
+         image.style.verticalAlign = "middle";
+         itemImageTag.replaceChild(image, itemImageTag.childNodes[0]);
       }
 
       let itemImageTags = document.querySelectorAll("td > table.tabl1 > tbody > tr > td:nth-child(1) > a.alllink");
       for (let itemImageTag of itemImageTags) {
-         let td = itemImageTag.parentElement;
          let splashes_split = itemImageTag.href.split("/");
          let id = splashes_split[splashes_split.length - 1];
          let image = createTag("img", [], []);
          image.src = "https://db.irowiki.org/image/monster/" + id + ".png";
-         image.onerror = (event) => {event.onerror = undefined; event.target.src = "https://static.divine-pride.net/images/mobs/png/" + id + ".png"};
+         image.onerror = (event) => { event.onerror = undefined; event.target.src = "https://static.divine-pride.net/images/mobs/png/" + id + ".png" };
+         image.maxWidth = 48;
          image.height = 48;
-         itemImageTag.innerHTML = "";
-         itemImageTag.appendChild(image);
+         image.style.verticalAlign = "middle";
+         itemImageTag.replaceChild(image, itemImageTag.childNodes[0]);
       }
    }
 
