@@ -6,9 +6,17 @@ const m_settings = {
 
    "ms_popup_collapses": {
       "ms_group_main": false,
+      "ms_group_main_settings": false,
+      "ms_group_main_functions": false,
       "ms_group_mobs": false,
+      "ms_group_mobs_settings": false,
+      "ms_group_mobs_functions": false,
       "ms_group_locations": false,
-      "ms_group_vending": false
+      "ms_group_locations_settings": false,
+      "ms_group_locations_functions": false,
+      "ms_group_vending": false,
+      "ms_group_vending_settings": false,
+      "ms_group_vending_functions": false
    }
 }
 
@@ -58,9 +66,8 @@ class PopupController {
          console.log(motr_settings);
          let collapseGroupTags = document.querySelectorAll("div.settings-group.collapse");
          for (let collapseTag of collapseGroupTags) {
-            let buttonTag = collapseTag.children[0];
             if (motr_settings["ms_popup_collapses"][collapseTag.getAttribute("name")] == true) {
-               this.collapseButtonToggle(collapseTag.children[0]);
+               this.collapseToggle(collapseTag);
             }
          }
       });
@@ -90,23 +97,40 @@ class PopupController {
          let btn = collapseTag.children[0];
          btn.addEventListener("click", async (event) => {
             await this.getLocalStorage().then(async (ms_var) => {
-               let buttonTag = event.target;
-               this.collapseButtonToggle(buttonTag);
-               ms_var["ms_popup_collapses"][collapseTag.getAttribute("name")] = buttonTag.classList.contains("active");
+               this.collapseToggle(collapseTag);
+               ms_var["ms_popup_collapses"][collapseTag.getAttribute("name")] = collapseTag.classList.contains("active");
                await this.setLocalStorage(ms_var);
             });
          });
       }
    }
 
-   collapseButtonToggle(buttonTag) {
-      let collapseTag = buttonTag.parentElement;
+   collapseToggle(collapseTag) {
+      collapseTag.classList.toggle("active");
+      this.collapseBaubleUpdate(collapseTag);
+   }
+
+   collapseBaubleUpdate(collapseTag) {
       let contentTag = collapseTag.children[1];
-      buttonTag.classList.toggle("active");
-      if (contentTag.style.maxHeight) {
-         contentTag.style.maxHeight = null;
+      let height = contentTag.scrollHeight;
+
+      let targetTag = collapseTag.parentElement;
+      while (targetTag.tagName !== "BODY") {
+         if (targetTag.tagName === "DIV") {
+            if ((targetTag.classList.contains("collapse")) && (targetTag.classList.contains("settings-group"))) {
+               if (collapseTag.classList.contains("active")) {
+                  let contentTargetTag = targetTag.children[1];
+                  contentTargetTag.style.maxHeight = parseFloat(contentTargetTag.style.maxHeight.split("px")[0]) + height + "px";
+               }
+            }
+         }
+         targetTag = targetTag.parentElement;
+      }
+
+      if (collapseTag.classList.contains("active")) {
+         contentTag.style.maxHeight = height + "px";
       } else {
-         contentTag.style.maxHeight = contentTag.scrollHeight + "px";
+         contentTag.style.maxHeight = null;
       }
    }
 

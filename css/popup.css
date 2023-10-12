@@ -93,7 +93,7 @@ body {
 }
 
 .container {
-  width: 300px;
+  width: 350px;
   background: white;
 }
 
@@ -146,7 +146,13 @@ header > img.logo {
 .settings-group {
   width: 100%;
 }
-.settings-group > * {
+.settings-group > button {
+  padding: 0 1em 0;
+}
+.settings-group > .content {
+  padding: 0 0 0 1em;
+}
+.settings-group.padding > .content {
   padding: 0 1em 0;
 }
 .settings-group .title {
@@ -166,16 +172,19 @@ header > img.logo {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
-.settings-group .title:hover, .settings-group .title.active {
-  background: #f7dcba;
-}
 .settings-group .title::after {
   content: "+";
   color: inherit;
   font-weight: 900;
   float: right;
 }
-.settings-group .title.active::after {
+.settings-group .title:hover {
+  background: #f7dcba;
+}
+.settings-group.active > .title {
+  background: #f7dcba;
+}
+.settings-group.active > .title::after {
   content: "−";
 }
 .settings-group > .content {
@@ -185,17 +194,17 @@ header > img.logo {
   transition: max-height 0.2s ease-out;
   background-color: #f1f1f1;
 }
-.settings-group > .content > *:first-child {
-  padding-top: 1em;
-}
-.settings-group > .content > *:last-child {
-  padding-bottom: 1em;
-}
 .settings-group > .content ul.settings-list > li {
   margin-bottom: 5px;
 }
 .settings-group > .content ul.settings-list > li:last-child {
   margin-bottom: 0;
+}
+.settings-group.padding > .content > *:first-child {
+  padding-top: 1em;
+}
+.settings-group.padding > .content > *:last-child {
+  padding-bottom: 1em;
 }
 
 .checkbox {
