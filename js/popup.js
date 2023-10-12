@@ -3,28 +3,110 @@ const m_settings = {
    "ms_image_replace": false,
    "ms_mobs_item_steal": false,
    "ms_vending_navi_clipboard": false,
+
+   "ms_popup_collapses": {
+      "ms_group_main": false,
+      "ms_group_mobs": false,
+      "ms_group_locations": false,
+      "ms_group_vending": false
+   }
 }
 
 class PopupController {
 
    constructor() {
-      
+      this.updateLocalStorage();
+      this.setLogicEvents();
+      this.uploadSettings();
    }
 
-   addCollapseItem(className) {
-      let collapses = document.getElementsByClassName(className);
-      for (let collapse of collapses) {
-         let btn = collapse.querySelector("button");
-         btn.addEventListener("click", ()=>{
-            let btn = collapse.querySelector("button");
-            let content = collapse.querySelector(".content");
-            btn.classList.toggle("active");
-            if (content.style.maxHeight) {
-               content.style.maxHeight = null;
-            } else {
-               content.style.maxHeight = content.scrollHeight + "px";
+   async updateLocalStorage() {
+      await this.getLocalStorage().then(async (ms_var) => {
+         this.checkMap(ms_var, m_settings);
+         await this.setLocalStorage(ms_var);
+      });
+   }
+
+   checkMap(variable, map) {
+      for (let key in map) {
+         if (variable[key] === undefined) {
+            variable[key] = map[key];
+         } else {
+            if (typeof (variable[key]) == "object") {
+               this.checkMap(variable[key], map[key]);
             }
+         }
+      }
+   }
+
+   async uploadSettings() {
+      await this.uploadCheckboxSettings();
+      await this.uploadCollapseGroupSettings();
+   }
+
+   async uploadCheckboxSettings() {
+      await this.getLocalStorage().then((motr_settings) => {
+         let checkboxTags = document.querySelectorAll("label.checkbox > input[type=checkbox]");
+         for (let checkboxTag of checkboxTags) {
+            checkboxTag.checked = motr_settings[checkboxTag.name];
+         }
+      });
+   }
+
+   async uploadCollapseGroupSettings() {
+      await this.getLocalStorage().then((motr_settings) => {
+         console.log(motr_settings);
+         let collapseGroupTags = document.querySelectorAll("div.settings-group.collapse");
+         for (let collapseTag of collapseGroupTags) {
+            let buttonTag = collapseTag.children[0];
+            if (motr_settings["ms_popup_collapses"][collapseTag.getAttribute("name")] == true) {
+               this.collapseButtonToggle(collapseTag.children[0]);
+            }
+         }
+      });
+   }
+
+   async setLogicEvents() {
+      await this.setCheckboxFunctions();
+      await this.setCollapseFunctions();
+   }
+
+   async setCheckboxFunctions() {
+      let checkboxTags = document.querySelectorAll("label.checkbox > input[type=checkbox]");
+      checkboxTags.forEach((checkboxTag) => {
+         checkboxTag.addEventListener("change", async (event) => {
+            await this.getLocalStorage().then(async (ms_var) => {
+               let target = event.target;
+               ms_var[target.name] = target.checked;
+               await this.setLocalStorage(ms_var);
+            });
          });
+      });
+   }
+
+   async setCollapseFunctions() {
+      let collapseGroupTags = document.querySelectorAll("div.settings-group.collapse");
+      for (let collapseTag of collapseGroupTags) {
+         let btn = collapseTag.children[0];
+         btn.addEventListener("click", async (event) => {
+            await this.getLocalStorage().then(async (ms_var) => {
+               let buttonTag = event.target;
+               this.collapseButtonToggle(buttonTag);
+               ms_var["ms_popup_collapses"][collapseTag.getAttribute("name")] = buttonTag.classList.contains("active");
+               await this.setLocalStorage(ms_var);
+            });
+         });
+      }
+   }
+
+   collapseButtonToggle(buttonTag) {
+      let collapseTag = buttonTag.parentElement;
+      let contentTag = collapseTag.children[1];
+      buttonTag.classList.toggle("active");
+      if (contentTag.style.maxHeight) {
+         contentTag.style.maxHeight = null;
+      } else {
+         contentTag.style.maxHeight = contentTag.scrollHeight + "px";
       }
    }
 
@@ -41,41 +123,12 @@ class PopupController {
    async setLocalStorage(motr_settings) {
       await chrome.storage.local.set({ motr_settings: motr_settings });
    }
-
-   async setCheckSettings() {
-      await this.setCheckBoxSettings();
-   }
-
-   async setCheckBoxSettings() {
-      let checkboxes = document.querySelectorAll("label.checkbox > input[type=checkbox]");
-      checkboxes.forEach((checkbox) => {
-         checkbox.addEventListener("change", (event) => {
-            let motr_settings = this.getLocalStorage().then((result)=>{
-               this.changeCheckboxEvent(event.target, result);
-            });
-         });
-      });
-   }
-
-   changeCheckboxEvent(target, settings) {
-      settings[target.name] = target.checked;
-      this.setLocalStorage(settings);
-   }
-
-   updateCheckboxes() {
-      this.getLocalStorage().then((motr_settings) => {
-         for (let key in motr_settings) {
-            let checkbox = document.querySelector("label.checkbox > input[type=checkbox][name=" + key + "]");
-            if (checkbox != null) {
-               checkbox.checked = motr_settings[key];
-            }
-         }
-      });
-   }
 }
 
-let controller = new PopupController();
-
-controller.updateCheckboxes();
-controller.setCheckSettings();
-controller.addCollapseItem("collapse");
+if ((document.readyState == "complete") || (document.readyState == "interactive")) {
+   let controller = new PopupController();
+} else {
+   document.addEventListener("DOMContentLoaded", () => {
+      let controller = new PopupController();
+   });
+}
