@@ -4,11 +4,12 @@ async function getLocalStorage() {
 }
 
 chrome.tabs.onUpdated.addListener(
-   (tabId, changeInfo, tab) => {
+   async (tabId, changeInfo, tab) => {
+      await chrome.tabs.query({active: true, lastFocusedWindow: true}).then(result => console.log(result));
       console.log(changeInfo);
       if (changeInfo.status != undefined) {
          if (changeInfo.status == "loading") {
-            if (tab.url.indexOf("https://motr-online.com/database/monsters/") >= 0) {
+            if ((tab.url.indexOf("https://motr-online.com/database/monsters/") >= 0) || (tab.url.indexOf("http://motr-online.com/database/monsters/") >= 0)) {
                getLocalStorage().then(result => {
                   for(let key in result) {
                      if (!result[key]) {
@@ -33,7 +34,7 @@ chrome.tabs.onUpdated.addListener(
                   }
                });
             }
-            if (tab.url.indexOf("https://motr-online.com/members/vendingstat") >= 0) {
+            if ((tab.url.indexOf("https://motr-online.com/members/vendingstat")) || (tab.url.indexOf("http://motr-online.com/members/vendingstat")) >= 0) {
                getLocalStorage().then(result => {
                   for(let key in result) {
                      if (!result[key]) {
@@ -57,7 +58,7 @@ chrome.tabs.onUpdated.addListener(
                   }
                });
             }
-            if (tab.url.indexOf("https://motr-online.com/database/quicksearch") >= 0) {
+            if ((tab.url.indexOf("https://motr-online.com/database/quicksearch") >= 0) || (tab.url.indexOf("http://motr-online.com/database/quicksearch") >= 0)) {
                getLocalStorage().then(result => {
                   for(let key in result) {
                      if (!result[key]) {
@@ -75,7 +76,7 @@ chrome.tabs.onUpdated.addListener(
                   }
                });
             }
-            if (tab.url.indexOf("https://motr-online.com/database/items/") >= 0) {
+            if ((tab.url.indexOf("https://motr-online.com/database/items/") >= 0) || (tab.url.indexOf("http://motr-online.com/database/items/") >= 0)) {
                getLocalStorage().then(result => {
                   for(let key in result) {
                      if (!result[key]) {
@@ -93,7 +94,7 @@ chrome.tabs.onUpdated.addListener(
                   }
                });
             }
-            if (tab.url.indexOf("https://motr-online.com/database/maps/") >= 0) {
+            if ((tab.url.indexOf("https://motr-online.com/database/maps/") >= 0) || (tab.url.indexOf("http://motr-online.com/database/maps/") >= 0)) {
                getLocalStorage().then(result => {
                   for(let key in result) {
                      if (!result[key]) {
@@ -111,7 +112,7 @@ chrome.tabs.onUpdated.addListener(
                   }
                });
             }
-            if (tab.url.indexOf("https://motr-online.com/database/cards/") >= 0) {
+            if ((tab.url.indexOf("https://motr-online.com/database/cards/") >= 0) || (tab.url.indexOf("http://motr-online.com/database/cards/") >= 0)) {
                getLocalStorage().then(result => {
                   for(let key in result) {
                      if (!result[key]) {
@@ -129,7 +130,7 @@ chrome.tabs.onUpdated.addListener(
                   }
                });
             }
-            if (tab.url.indexOf("https://motr-online.com/database/wearables/") >= 0) {
+            if ((tab.url.indexOf("https://motr-online.com/database/wearables/") >= 0) || (tab.url.indexOf("http://motr-online.com/database/wearables/") >= 0)) {
                getLocalStorage().then(result => {
                   for(let key in result) {
                      if (!result[key]) {
@@ -147,7 +148,7 @@ chrome.tabs.onUpdated.addListener(
                   }
                });
             }
-            if (tab.url.indexOf("https://motr-online.com/members/charinfo/invertory/") >= 0) {
+            if ((tab.url.indexOf("https://motr-online.com/members/charinfo/invertory/") >= 0) || (tab.url.indexOf("http://motr-online.com/members/charinfo/invertory/") >= 0)) {
                getLocalStorage().then(result => {
                   for(let key in result) {
                      if (!result[key]) {
