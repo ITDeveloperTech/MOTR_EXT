@@ -34,7 +34,7 @@ chrome.tabs.onUpdated.addListener(
                   }
                });
             }
-            if ((tab.url.indexOf("https://motr-online.com/members/vendingstat")) || (tab.url.indexOf("http://motr-online.com/members/vendingstat")) >= 0) {
+            if ((tab.url.indexOf("https://motr-online.com/members/vendingstat") >= 0) || (tab.url.indexOf("http://motr-online.com/members/vendingstat")) >= 0) {
                getLocalStorage().then(result => {
                   for(let key in result) {
                      if (!result[key]) {
