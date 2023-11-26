@@ -42,6 +42,8 @@ class ImageReplacer {
       this.funcsMap.set("motr-online.com/database/maps/", this.replaceMap);
       this.funcsMap.set("motr-online.com/members/charinfo/invertory/", this.replaceCharItems);
       this.funcsMap.set("motr-online.com/members/charinfo/equip/", this.replaceEquip);
+      this.funcsMap.set("motr-online.com/database/skills/", this.replaceSkill);
+      this.funcsMap.set("motr-online.com/members/charinfo/skills/", this.replaceCharSkill);
    }
 
    funcMatcher(href, func) {
@@ -86,10 +88,11 @@ class ImageReplacer {
    replaceVending() {
       let imgTags = document.querySelectorAll("table.tableBord td > img, table.tableBord td > a > img");
       for (let imgTag of imgTags) {
-         let splashes_split = imgTag.src.split("/");
-         let id = splashes_split[splashes_split.length - 1].split(".")[0];
-         imgTag.src = "https://www.divine-pride.net/img/items/item/iRO/" + id;
-         imgTag.style.verticalAlign = "middle";
+         // let splashes_split = imgTag.src.split("/");
+         // let id = splashes_split[splashes_split.length - 1].split(".")[0];
+         // imgTag.src = "https://www.divine-pride.net/img/items/item/iRO/" + id;
+         // imgTag.style.verticalAlign = "middle";
+         imgTag.src = imgTag.src.replace("dbpic/", "dbpic_/").toLowerCase();
       }
    }
 
@@ -109,6 +112,12 @@ class ImageReplacer {
             imgTag.onerror = (event) => { event.onerror = undefined; event.target.src = "https://static.divine-pride.net/images/mobs/png/" + id + ".png" };
          }
          imgTag.style.verticalAlign = "middle";
+      }
+      if (imgTags.length == 0) {
+         imgTags = allTables[1].querySelectorAll("tbody > tr td.td_h1_center > img");
+         for (let imgTag of imgTags) {
+            imgTag.src = imgTag.src.replace("dbpic/", "dbpic_/");
+         }
       }
    }
 
@@ -184,18 +193,34 @@ class ImageReplacer {
    replaceCharItems() {
       let imgTags = document.querySelectorAll(".top2 td img, .top1 td img");
       for (let imgTag of imgTags) {
-         let splits = imgTag.src.split("/");
-         let id = splits[splits.length - 1].split(".")[0];
-         imgTag.src = "https://www.divine-pride.net/img/items/item/iRO/" + id;
+         // let splits = imgTag.src.split("/");
+         // let id = splits[splits.length - 1].split(".")[0];
+         // imgTag.src = "https://www.divine-pride.net/img/items/item/iRO/" + id;
+         imgTag.src = imgTag.src.replace("dbpic/", "dbpic_/").toLowerCase();
       }
    }
 
    replaceEquip() {
       let imgTags = document.querySelectorAll("table.tableBord td[align=left] img");
       for (let imgTag of imgTags) {
-         let splits = imgTag.src.split("/");
-         let id = splits[splits.length - 1].split(".")[0];
-         imgTag.src = "https://www.divine-pride.net/img/items/item/iRO/" + id;
+         // let splits = imgTag.src.split("/");
+         // let id = splits[splits.length - 1].split(".")[0];
+         // imgTag.src = "https://www.divine-pride.net/img/items/item/iRO/" + id;
+         imgTag.src = imgTag.src.replace("dbpic/", "dbpic_/").toLowerCase();
+      }
+   }
+
+   replaceSkill() {
+      let imgTags = document.querySelectorAll("table.tabl1 td > img");
+      for (let imgTag of imgTags) {
+         imgTag.src = imgTag.src.replace("dbpic/", "dbpic_/").toLowerCase();
+      }
+   }
+
+   replaceCharSkill() {
+      let imgTags = document.querySelectorAll("table.tableBord td > img");
+      for (let imgTag of imgTags) {
+         imgTag.src = imgTag.src.replace("dbpic/", "dbpic_/").toLowerCase();
       }
    }
 }

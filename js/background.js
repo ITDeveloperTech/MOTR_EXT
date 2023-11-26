@@ -184,6 +184,42 @@ chrome.tabs.onUpdated.addListener(
                   }
                });
             }
+            if ((tab.url.indexOf("https://motr-online.com/database/skills/") >= 0) || (tab.url.indexOf("http://motr-online.com/database/skills/") >= 0)) {
+               getLocalStorage().then(result => {
+                  for(let key in result) {
+                     if (!result[key]) {
+                        continue;
+                     }
+                     switch (key) {
+                        case "ms_image_replace":
+                           chrome.scripting.executeScript(
+                              {
+                                 target: { tabId: tabId },
+                                 files: ["js/back/imageReplace.js"]
+                              });
+                        break;
+                     }
+                  }
+               });
+            }
+            if ((tab.url.indexOf("https://motr-online.com/members/charinfo/skills/") >= 0) || (tab.url.indexOf("http://motr-online.com/members/charinfo/skills/") >= 0)) {
+               getLocalStorage().then(result => {
+                  for(let key in result) {
+                     if (!result[key]) {
+                        continue;
+                     }
+                     switch (key) {
+                        case "ms_image_replace":
+                           chrome.scripting.executeScript(
+                              {
+                                 target: { tabId: tabId },
+                                 files: ["js/back/imageReplace.js"]
+                              });
+                        break;
+                     }
+                  }
+               });
+            }
          }
       }
    }
