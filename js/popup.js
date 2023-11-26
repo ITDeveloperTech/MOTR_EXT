@@ -53,9 +53,13 @@ class PopupController {
    }
 
    async uploadCheckboxSettings() {
-      await this.getLocalStorage().then((motr_settings) => {
+      await this.getLocalStorage().then(async (motr_settings) => {
          let checkboxTags = document.querySelectorAll("label.checkbox > input[type=checkbox]");
          for (let checkboxTag of checkboxTags) {
+            if (checkboxTag.disabled) {
+               motr_settings[checkboxTag.name] = false;
+               await this.setLocalStorage(motr_settings);
+            }
             checkboxTag.checked = motr_settings[checkboxTag.name];
          }
       });
