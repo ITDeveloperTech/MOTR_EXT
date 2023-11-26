@@ -3,6 +3,7 @@ const m_settings = {
    "ms_image_replace": false,
    "ms_mobs_item_steal": false,
    "ms_vending_navi_clipboard": false,
+   "ms_calc_motr": false,
 
    "ms_popup_collapses": {
       "ms_group_main": false,

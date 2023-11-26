@@ -220,6 +220,24 @@ chrome.tabs.onUpdated.addListener(
                   }
                });
             }
+            if ((tab.url.indexOf("https://calc.motr-online.com") >= 0) || (tab.url.indexOf("http://calc.motr-online.com") >= 0)) {
+               getLocalStorage().then(result => {
+                  for(let key in result) {
+                     if (!result[key]) {
+                        continue;
+                     }
+                     switch (key) {
+                        case "ms_calc_motr":
+                           chrome.scripting.executeScript(
+                              {
+                                 target: { tabId: tabId },
+                                 files: ["js/back/calcMotr.js"]
+                              });
+                        break;
+                     }
+                  }
+               });
+            }
          }
       }
    }
