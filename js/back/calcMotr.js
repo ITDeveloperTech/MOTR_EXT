@@ -66,7 +66,7 @@ class CalcReplacer {
    }
 
    fixMain() {
-      if (document.location.href.split("calc.motr-online.com/")[1].length > 0) {
+      if (document.location.href.split("calc.motr-online.com/")[1].length > 1) {
          let skill_imgs = document.querySelectorAll(".tree-item__img > img");
          for (let imageTag of skill_imgs) {
             imageTag.src = imageTag.src.replace("dbpic/", "dbpic_/").toLowerCase();
