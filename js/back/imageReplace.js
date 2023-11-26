@@ -33,14 +33,15 @@ class ImageReplacer {
 
    mapGenerator() {
       this.funcsMap = new Map();
-      this.funcsMap.set("https://motr-online.com/database/monsters/", this.replaceMob);
-      this.funcsMap.set("https://motr-online.com/members/vendingstat", this.replaceVending);
-      this.funcsMap.set("https://motr-online.com/database/quicksearch", this.replaceQuickSearch);
-      this.funcsMap.set("https://motr-online.com/database/items/", this.replaceItem);
-      this.funcsMap.set("https://motr-online.com/database/cards/", this.replaceItem);
-      this.funcsMap.set("https://motr-online.com/database/wearables/", this.replaceItem);
-      this.funcsMap.set("https://motr-online.com/database/maps/", this.replaceMap);
-      this.funcsMap.set("https://motr-online.com/members/charinfo/invertory/", this.replaceCharItems);
+      this.funcsMap.set("motr-online.com/database/monsters/", this.replaceMob);
+      this.funcsMap.set("motr-online.com/members/vendingstat", this.replaceVending);
+      this.funcsMap.set("motr-online.com/database/quicksearch", this.replaceQuickSearch);
+      this.funcsMap.set("motr-online.com/database/items/", this.replaceItem);
+      this.funcsMap.set("motr-online.com/database/cards/", this.replaceItem);
+      this.funcsMap.set("motr-online.com/database/wearables/", this.replaceItem);
+      this.funcsMap.set("motr-online.com/database/maps/", this.replaceMap);
+      this.funcsMap.set("motr-online.com/members/charinfo/invertory/", this.replaceCharItems);
+      this.funcsMap.set("motr-online.com/members/charinfo/equip/", this.replaceEquip);
    }
 
    funcMatcher(href, func) {
@@ -183,7 +184,16 @@ class ImageReplacer {
    replaceCharItems() {
       let imgTags = document.querySelectorAll(".top2 td img, .top1 td img");
       for (let imgTag of imgTags) {
-         let splits = imgTag.src.split("/")
+         let splits = imgTag.src.split("/");
+         let id = splits[splits.length - 1].split(".")[0];
+         imgTag.src = "https://www.divine-pride.net/img/items/item/iRO/" + id;
+      }
+   }
+
+   replaceEquip() {
+      let imgTags = document.querySelectorAll("table.tableBord td[align=left] img");
+      for (let imgTag of imgTags) {
+         let splits = imgTag.src.split("/");
          let id = splits[splits.length - 1].split(".")[0];
          imgTag.src = "https://www.divine-pride.net/img/items/item/iRO/" + id;
       }
