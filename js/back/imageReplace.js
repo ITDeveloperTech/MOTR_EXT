@@ -60,6 +60,12 @@ class ImageReplacer {
             image.onerror = (event) => { event.onerror = undefined; event.target.src = "https://static.divine-pride.net/images/mobs/png/" + id + ".png" };
             image.alt = document.querySelector("table.tableBord > tbody > tr:nth-child(1) > td:nth-child(1)").innerText;
             mobTdTag.replaceChild(image, mobTdTag.childNodes[0]);
+         } else if(mobTdTag.children[0].tagName == "IMG") {
+            let image = mobTdTag.children[0];
+            let splits = document.location.href.split("/");
+            let id = splits[splits.length - 1];
+            image.src = "https://db.irowiki.org/image/monster/" + id + ".png";
+            image.onerror = (event) => { event.onerror = undefined; event.target.src = "https://static.divine-pride.net/images/mobs/png/" + id + ".png" };
          }
       }
 
