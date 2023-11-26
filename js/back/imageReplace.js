@@ -60,7 +60,7 @@ class ImageReplacer {
             image.onerror = (event) => { event.onerror = undefined; event.target.src = "https://static.divine-pride.net/images/mobs/png/" + id + ".png" };
             image.alt = document.querySelector("table.tableBord > tbody > tr:nth-child(1) > td:nth-child(1)").innerText;
             mobTdTag.replaceChild(image, mobTdTag.childNodes[0]);
-         } else if(mobTdTag.children[0].tagName == "IMG") {
+         } else if (mobTdTag.children[0].tagName == "IMG") {
             let image = mobTdTag.children[0];
             let splits = document.location.href.split("/");
             let id = splits[splits.length - 1];
@@ -116,15 +116,24 @@ class ImageReplacer {
       if (itemImageTag !== null) {
          let splashes_split = document.location.href.split("/");
          let id = splashes_split[splashes_split.length - 1];
-         let image = createTag("img", [], []);
-         if (itemImageTag.innerText.indexOf("Карта ") == 0) {
-            image.src = "https://static.divine-pride.net/images/items/cards/" + id + ".png";
+         if (itemImageTag.children[0].tagName == "IMG") {
+            let image = itemImageTag.children[0];
+            if (image.src.indexOf("card") >= 0) {
+               image.src = "https://static.divine-pride.net/images/items/cards/" + id + ".png";
+            } else {
+               image.src = "https://www.divine-pride.net/img/items/collection/iRO/" + id;
+            }
          } else {
-            image.src = "https://www.divine-pride.net/img/items/collection/iRO/" + id;
+            let image = createTag("img", [], []);
+            if (itemImageTag.innerText.indexOf("Карта ") == 0) {
+               image.src = "https://static.divine-pride.net/images/items/cards/" + id + ".png";
+            } else {
+               image.src = "https://www.divine-pride.net/img/items/collection/iRO/" + id;
+            }
+            image.alt = itemImageTag.innerText;
+            image.style.verticalAlign = "middle";
+            itemImageTag.replaceChild(image, itemImageTag.childNodes[0]);
          }
-         image.alt = itemImageTag.innerText;
-         image.style.verticalAlign = "middle";
-         itemImageTag.replaceChild(image, itemImageTag.childNodes[0]);
       }
 
       let itemImageTags = document.querySelectorAll("td > table.tabl1 > tbody > tr > td:nth-child(1) > a.alllink");
