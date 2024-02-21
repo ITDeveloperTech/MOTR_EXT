@@ -12,5 +12,6 @@
 
 ### Видео с установкой для Chrome/Opera
 
-<video src='https://youtu.be/imcWOn3A-kQ'></video>
+
+[![Watch the video](https://img.youtube.com/vi/imcWOn3A-kQ/hqdefault.jpg)](https://www.youtube.com/embed/imcWOn3A-kQ)
 
