@@ -16,7 +16,7 @@ chrome.tabs.onUpdated.addListener(
                         continue;
                      }
                      switch (key) {
-                        case "ms_mobs_info":
+                        case "ms_divine_pride":
                            chrome.scripting.executeScript(
                               {
                                  target: { tabId: tabId },
