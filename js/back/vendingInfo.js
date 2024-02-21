@@ -41,7 +41,13 @@ class VendingInfo {
             border-radius: 3px;
          }
       `);
-      let tdTags = document.querySelectorAll(".top1 td:nth-child(1), .top2 td:nth-child(1)");
+      let tdTags;
+      if (document.querySelector("input[name=searchVendingHistory]").checked) {
+         tdTags = document.querySelectorAll(".top1 td:nth-child(2), .top2 td:nth-child(2)")
+      } else {
+         tdTags = document.querySelectorAll(".top1 td:nth-child(1), .top2 td:nth-child(1)");
+      }
+
       for (let tdTag of tdTags) {
          let image = createTag("img", ["motrSettings-smallLinkButton"], []);
          image.src = "https://cdn-icons-png.flaticon.com/128/7263/7263329.png";
