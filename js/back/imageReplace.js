@@ -53,7 +53,7 @@ class ImageReplacer {
    }
 
    replaceMob() {
-      let mobTdTag = document.querySelector("table.tableBord > tbody > tr:nth-child(2) > td:nth-child(1)");
+      let mobTdTag = document.querySelector("table.tableBord > tbody > tr:nth-child(1) > td:nth-child(1)");
       if (mobTdTag !== null) {
          if (mobTdTag.childNodes[0].nodeType == 3) {
             let image = createTag("img", [], []);
@@ -72,16 +72,17 @@ class ImageReplacer {
          }
       }
 
-      let dropItemsTag = document.querySelectorAll("table.tabl1:nth-child(1) td:nth-child(1) > a.alllink");
+      let dropItemsTag = document.querySelectorAll("table.tabl1:nth-child(1) td:nth-child(1) > a.alllink2 > img");
       for (let imgTag of dropItemsTag) {
-         let splashes_split = imgTag.href.split("/");
-         let id = splashes_split[splashes_split.length - 1];
-         let image = createTag("img", [], []);
-         image.src = "https://www.divine-pride.net/img/items/item/iRO/" + id;
-         image.alt = imgTag.innerText;
-         image.style.verticalAlign = "middle";
-         let td = imgTag.parentElement;
-         td.replaceChild(image, imgTag);
+         imgTag.src = imgTag.src.replace("dbpic/", "dbpic_/").toLowerCase();
+         // let splashes_split = imgTag.href.split("/");
+         // let id = splashes_split[splashes_split.length - 1];
+         // let image = createTag("img", [], []);
+         // image.src = "https://www.divine-pride.net/img/items/item/iRO/" + id;
+         // image.alt = imgTag.innerText;
+         // image.style.verticalAlign = "middle";
+         // let td = imgTag.parentElement;
+         // td.replaceChild(image, imgTag);
       }
    }
 
