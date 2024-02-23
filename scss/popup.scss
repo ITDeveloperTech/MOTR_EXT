@@ -212,3 +212,20 @@ footer {
       font-size: 0.85em;
    }
 }
+
+.btn-newwindow {
+   display: inline-block;
+   text-decoration: none;
+   &:hover {
+      background: #c4a785;
+      border-color: #917657;
+   }
+   background: #f7dcba;
+   border: 1px solid #c4a785;
+   padding: 10px;
+   color: black;
+   font-weight: 400;
+   border-radius: 5px;
+   cursor: pointer;
+   transition: all 0.15s ease-out;
+}

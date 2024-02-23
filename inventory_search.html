@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Общедоступный поиск</title>
+   <link rel="stylesheet" href="css/inventory_search.css">
+</head>
+<body>
+   <div class="loading-layout">
+      <h2>
+         Происходит какая-та операция, подождите пожалуйста
+      </h2>
+      <img class="loader-image" src="img/icons/loading.png">
+      <span class="description">
+         Тут что то написано
+      </span>
+   </div>
+   <div class="container">
+      <h1>
+         Поиск в инвентаре, в экипировке, на складе и на вендинге
+      </h1>
+      <div class="search-settings">
+         <div id="char-settings" class="settings-group">
+            <ul>
+
+            </ul>
+         </div>
+         <div id="search-type-settings" class="settings-group">
+            <ul>
+               <li class="settings-item">
+                  <label class="checkbox bounce">
+                     <input type="checkbox" name="vending_buy_search">
+                     <svg viewBox="0 0 21 21">
+                        <polyline points="5 10.75 8.5 14.25 16 6"></polyline>
+                     </svg>
+                     <span>Искать вендинг (Продажа)</span>
+                  </label>
+               </li>
+               <li class="settings-item">
+                  <label class="checkbox bounce">
+                     <input type="checkbox" name="vending_sell_search">
+                     <svg viewBox="0 0 21 21">
+                        <polyline points="5 10.75 8.5 14.25 16 6"></polyline>
+                     </svg>
+                     <span>Искать вендинг (Скупка)</span>
+                  </label>
+               </li>
+               <li class="settings-item">
+                  <label class="checkbox bounce">
+                     <input type="checkbox" name="storage_search">
+                     <svg viewBox="0 0 21 21">
+                        <polyline points="5 10.75 8.5 14.25 16 6"></polyline>
+                     </svg>
+                     <span>Искать на складе</span>
+                  </label>
+               </li>
+               <li class="settings-item">
+                  <label class="checkbox bounce">
+                     <input type="checkbox" name="inventory_search">
+                     <svg viewBox="0 0 21 21">
+                        <polyline points="5 10.75 8.5 14.25 16 6"></polyline>
+                     </svg>
+                     <span>Искать в инвентаре</span>
+                  </label>
+               </li>
+               <li class="settings-item">
+                  <label class="checkbox bounce">
+                     <input type="checkbox" name="equip_search">
+                     <svg viewBox="0 0 21 21">
+                        <polyline points="5 10.75 8.5 14.25 16 6"></polyline>
+                     </svg>
+                     <span>Искать среди экипированного</span>
+                  </label>
+               </li>
+            </ul>
+         </div>
+         <div id="search-group-settings" class="settings-group">
+            <ul>
+               <li>
+                  <label>
+                     <span class="display-block">Быстрый поиск по id:</span><br>
+                     <input type="text" name="quick_search" class="input_text" id="quick_search_input">
+                     <div class="search-modal search-results-table">
+                        <div class="search-result">
+                           <table>
+                              <thead>
+                                 <tr>
+                                    <th>Название</th>
+                                    <th>Вес</th>
+                                    <th>Цена</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+
+                              </tbody>
+                           </table>
+                        </div>
+                     </div>
+                  </label>
+               </li>
+               <li>
+                  <h2>
+                     Стандартные группы предметов
+                  </h2>
+               </li>
+               <li>
+                  <div class="settings-group" id="default_item_groups">
+                     <ul>
+                        
+                     </ul>
+                  </div>
+               </li>
+               <li>
+                  <h2>
+                     Пользовательские группы предметов
+                  </h2>
+               </li>
+               <li>
+                  <div class="settings-group" id="custom_item_groups">
+                     <ul>
+                     </ul>
+                  </div>
+               </li>
+            </ul>
+         </div>
+         <a id="search-submit" class="search-button">
+            Начать поиск
+         </a>
+      </div>
+      <div class="search-results-table">
+         <ul>
+            <li>
+               <h2>
+                  Поиск в вендинге (Продажа)
+               </h2>
+            </li>
+            <li>
+               <div class="search-result" id="vending_search_buy_result">
+                  <ul>
+                     <table>
+                        <thead>
+                           <tr>
+                              <th>Место</th>
+                              <th>Предмет</th>
+                              <th>Имя</th>
+                              <th>Магазин</th>
+                              <th>Кол-во</th>
+                              <th>Цена</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                     </table>
+                  </ul>
+               </div>
+            </li>
+            <li>
+               <h2>
+                  Поиск в вендинге (Скупка)
+               </h2>
+            </li>
+            <li>
+               <div class="search-result" id="vending_search_sell_result">
+                  <ul>
+                     <table>
+                        <thead>
+                           <tr>
+                              <th>Место</th>
+                              <th>Предмет</th>
+                              <th>Имя</th>
+                              <th>Магазин</th>
+                              <th>Кол-во</th>
+                              <th>Цена</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                     </table>
+                  </ul>
+               </div>
+            </li>
+            <li>
+               <h2>
+                  Поиск на складе
+               </h2>
+            </li>
+            <li>
+               <div class="search-result" id="storage_search_result">
+                  <ul>
+                     <table>
+                        <thead>
+                           <tr>
+                              <th>#</th>
+                              <th>Кафра</th>
+                              <th>Кол-во</th>
+                              <th>Карты</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                     </table>
+                  </ul>
+               </div>
+            </li>
+            <li>
+               <h2>
+                  Поиск в инвентаре
+               </h2>
+            </li>
+            <li>
+               <div class="search-result" id="inventory_search_result">
+                  <ul>
+                     <table>
+                        <thead>
+                           <tr>
+                              <th>#</th>
+                              <th>Кафра</th>
+                              <th>Кол-во</th>
+                              <th>Карты</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                     </table>
+                  </ul>
+               </div>
+            </li>
+            <li>
+               <h2>
+                  Поиск в экипировке
+               </h2>
+            </li>
+            <li>
+               <div class="search-result" id="equip_search_result">
+                  <ul>
+                     <table>
+                        <thead>
+                           <tr>
+                              <th>#</th>
+                              <th>Экипировка</th>
+                              <th>Карты</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                     </table>
+                  </ul>
+               </div>
+            </li>
+         </ul>
+      </div>
+   </div>
+
+   <template id="MOTREXT_settings_item">
+      <li class="settings-item">
+         <label class="checkbox bounce">
+            <input type="checkbox" name="">
+            <svg viewBox="0 0 21 21">
+               <polyline points="5 10.75 8.5 14.25 16 6"></polyline>
+            </svg>
+            <span></span>
+         </label>
+      </li>
+   </template>
+   <template id="MOTREXT_search_group_item">
+      <li class="settings-item search-item">
+         <label class="checkbox bounce plus-minus">
+            <input type="checkbox" name="">
+            <svg viewBox="0 0 21 21">
+               <polyline class="plus" points="5 10.5 15.5 10.5 10.5 10.5 10.5 5 10.5 15.5"></polyline>
+               <polyline class="minus" points="5 10.5 15.5 10.5"></polyline>
+            </svg>
+         </label>
+         <label class="checkbox bounce triple-state">
+            <input type="checkbox" name="">
+            <svg viewBox="0 0 21 21">
+               <polyline points="5 10.75 8.5 14.25 16 6"></polyline>
+               <rect width="13" height="13" rx="3" x="4" y="4"></rect>
+            </svg>
+            <span>
+            </span>
+         </label>
+      </li>
+   </template>
+   <template id="MOTREXT_warning_item">
+      <p class="warning_text">
+         <img src="img/icons/warning.png" width="32px" height="32px" alt="">
+         <span></span>
+      </p>
+   </template>
+   <script src="js/inventory_seach.js"></script>
+</body>
+</html>

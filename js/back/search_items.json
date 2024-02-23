@@ -1,0 +1,1997 @@
+[
+   {
+      "type": "group",
+      "name": "Расходники",
+      "id": "consumable",
+      "items": [
+         {
+            "type": "group",
+            "name": "Потребляемые чаром",
+            "id": "self_use",
+            "items": [
+               {
+                  "type": "group",
+                  "name": "Ценные Растения",
+                  "id": "rich_plants",
+                  "items": [
+                     {
+                        "type": "item",
+                        "name": "Фрукт Мастелы",
+                        "id": "mastela_fruit",
+                        "item_id": 522
+                     },
+                     {
+                        "type": "item",
+                        "name": "Королевское Желе",
+                        "id": "royal_jelly",
+                        "item_id": 526
+                     },
+                     {
+                        "type": "item",
+                        "name": "Ягода Иггдрасиля",
+                        "id": "yggdrasil_berry",
+                        "item_id": 607
+                     },
+                     {
+                        "type": "item",
+                        "name": "Семя Иггдрасиля",
+                        "id": "yggdrasil_seed",
+                        "item_id": 608
+                     }
+                  ]
+               },
+               {
+                  "type": "group",
+                  "name": "Зелья",
+                  "id": "potions",
+                  "items": [
+                     {
+                        "type": "group",
+                        "name": "Конденсированные",
+                        "id": "condensed",
+                        "items": [
+                           {
+                              "type": "hidden-group",
+                              "name": "Красное Конденсированное Зелье",
+                              "id": "red",
+                              "items": [
+                                 {
+                                    "type": "item",
+                                    "name": "-",
+                                    "id": "1",
+                                    "item_id": 545
+                                 },
+                                 {
+                                    "type": "item",
+                                    "name": "-",
+                                    "id": "2",
+                                    "item_id": 11568
+                                 }
+                              ]
+                           },
+                           {
+                              "type": "hidden-group",
+                              "name": "Жёлтое Конденсированное Зелье",
+                              "id": "yellow",
+                              "items": [
+                                 {
+                                    "type": "item",
+                                    "name": "-",
+                                    "id": "1",
+                                    "item_id": 546
+                                 },
+                                 {
+                                    "type": "item",
+                                    "name": "-",
+                                    "id": "2",
+                                    "item_id": 11574
+                                 }
+                              ]
+                           },
+                           {
+                              "type": "hidden-group",
+                              "name": "Белое Конденсированное Зелье",
+                              "id": "white",
+                              "items": [
+                                 {
+                                    "type": "item",
+                                    "name": "-",
+                                    "id": "1",
+                                    "item_id": 547
+                                 },
+                                 {
+                                    "type": "item",
+                                    "name": "-",
+                                    "id": "2",
+                                    "item_id": 11573
+                                 }
+                              ]
+                           }
+                        ]
+                     },
+                     {
+                        "type": "group",
+                        "name": "Обычные",
+                        "id": "default",
+                        "items": [
+                           {
+                              "type": "item",
+                              "name": "Красное Зелье",
+                              "id": "red",
+                              "item_id": 501
+                           },
+                           {
+                              "type": "item",
+                              "name": "Оранжевое Зелье",
+                              "id": "orange",
+                              "item_id": 502
+                           },
+                           {
+                              "type": "item",
+                              "name": "Жёлтое Зелье",
+                              "id": "yellow",
+                              "item_id": 503
+                           },
+                           {
+                              "type": "item",
+                              "name": "Белое Зелье",
+                              "id": "white",
+                              "item_id": 504
+                           },
+                           {
+                              "type": "item",
+                              "name": "Синее Зелье",
+                              "id": "blue",
+                              "item_id": 505
+                           }
+                        ]
+                     }
+                  ]
+               },
+               {
+                  "type": "group",
+                  "name": "Зелья ASPD",
+                  "id": "aspd_potions",
+                  "items": [
+                     {
+                        "type": "item",
+                        "name": "Зелье Концентрации",
+                        "id": "concentration",
+                        "item_id": 645
+                     },
+                     {
+                        "type": "item",
+                        "name": "Зелье Пробуждения",
+                        "id": "awakening",
+                        "item_id": 656
+                     },
+                     {
+                        "type": "item",
+                        "name": "Зелье Берсерка",
+                        "id": "berserk",
+                        "item_id": 657
+                     }
+                  ]
+               },
+               {
+                  "type": "group",
+                  "name": "Зелья жизни",
+                  "id": "true_live_potions",
+                  "items": [
+                     {
+                        "type": "item",
+                        "name": "Концентрат Малого Зелья Жизни",
+                        "id": "small",
+                        "item_id": 22817
+                     },
+                     {
+                        "type": "item",
+                        "name": "Концентрат Загадочного Зелья Жизни",
+                        "id": "mysterious",
+                        "item_id": 22816
+                     },
+                     {
+                        "type": "item",
+                        "name": "Концентрат Среднего Зелья Жизни",
+                        "id": "medium",
+                        "item_id": 22818
+                     }
+                  ]
+               },
+               {
+                  "type": "group",
+                  "name": "Микстуры",
+                  "id": "growth_potion",
+                  "items": [
+                     {
+                        "type": "item",
+                        "name": "Микстура Развития (база)",
+                        "id": "potion",
+                        "item_id": 23142
+                     },
+                     {
+                        "type": "item",
+                        "name": "Микстура Проессионализма (джоб)",
+                        "id": "jpotion",
+                        "item_id": 23143
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "type": "group",
+            "name": "Потребляемые для использования скиллов (боевых)",
+            "id": "skill_use",
+            "items": [
+               {
+                  "type": "group",
+                  "name": "Рунный Рыцарь",
+                  "id": "rune_knight",
+                  "items": [
+                     {
+                        "type": "item",
+                        "name": "Руна Наутиз",
+                        "id": "nauthiz",
+                        "item_id": 12725
+                     },
+                     {
+                        "type": "item",
+                        "name": "Руна Райдо",
+                        "id": "raido",
+                        "item_id": 12726
+                     },
+                     {
+                        "type": "item",
+                        "name": "Руна Беркана",
+                        "id": "berkana",
+                        "item_id": 12727
+                     },
+                     {
+                        "type": "item",
+                        "name": "Руна Иса",
+                        "id": "isa",
+                        "item_id": 12728
+                     },
+                     {
+                        "type": "item",
+                        "name": "Руна Асир",
+                        "id": "othila",
+                        "item_id": 12729
+                     },
+                     {
+                        "type": "item",
+                        "name": "Руна Ур",
+                        "id": "uruz",
+                        "item_id": 12730
+                     },
+                     {
+                        "type": "item",
+                        "name": "Руна Турс",
+                        "id": "thurisaz",
+                        "item_id": 12731
+                     },
+                     {
+                        "type": "item",
+                        "name": "Руна Перц",
+                        "id": "wyrd",
+                        "item_id": 12732
+                     },
+                     {
+                        "type": "item",
+                        "name": "Руна Хагалаз",
+                        "id": "hagalaz",
+                        "item_id": 12733
+                     },
+                     {
+                        "type": "item",
+                        "name": "Руна Люкс Анима",
+                        "id": "lux_anima",
+                        "item_id": 22540
+                     }
+                  ]
+               },
+               {
+                  "type": "group",
+                  "name": "Королевский Гвардеец",
+                  "id": "royal_guard",
+                  "items": [
+                     {
+                        "type": "item",
+                        "name": "Святая Вода",
+                        "id": "holy_water",
+                        "item_id": 523
+                     }
+                  ]
+               },
+               {
+                  "type": "group",
+                  "name": "Чернокнижник",
+                  "id": "warlock",
+                  "items": [
+                     {
+                        "type": "link",
+                        "name": "Самоцветы (гемы)",
+                        "link": "items-gemstones_and_points-gemstones"
+                     }
+                  ]
+               },
+               {
+                  "type": "group",
+                  "name": "Заклинатель",
+                  "id": "sorcerer",
+                  "items": [
+                     {
+                        "type": "link",
+                        "name": "Самоцветы (гемы)",
+                        "link": "items-gemstones_and_points-gemstones"
+                     },
+                     {
+                        "type": "link",
+                        "name": "Метки",
+                        "link": "items-gemstones_and_points-points"
+                     },
+                     {
+                        "type": "group",
+                        "name": "Преобразователи",
+                        "id": "elemental_converter",
+                        "items": [
+                           {
+                              "type": "item",
+                              "name": "Огненный Преобразователь",
+                              "id": "flame",
+                              "item_id": 12114
+                           },
+                           {
+                              "type": "item",
+                              "name": "Морозный Преобразователь",
+                              "id": "frost",
+                              "item_id": 12115
+                           },
+                           {
+                              "type": "item",
+                              "name": "Сейсмический Преобразователь",
+                              "id": "seismic",
+                              "item_id": 12116
+                           },
+                           {
+                              "type": "item",
+                              "name": "Электрический Преобразователь",
+                              "id": "lightning",
+                              "item_id": 12117
+                           }
+                        ]
+                     },
+                     {
+                        "type": "group",
+                        "name": "Камни для призыва",
+                        "id": "summon_stones",
+                        "items": [
+                           {
+                              "type": "link",
+                              "name": "Элементальные Камни (маленькие)",
+                              "link": "items-elemental_stones-small"
+                           },
+                           {
+                              "type": "link",
+                              "name": "Элементальные Камни (крупные)",
+                              "link": "items-elemental_stones-large"
+                           }
+                        ]
+                     },
+                     {
+                        "type": "item",
+                        "name": "Паутина",
+                        "id": "cobweb",
+                        "item_id": 1025
+                     }
+                  ]
+               },
+               {
+                  "type": "group",
+                  "name": "Рейнджер",
+                  "id": "ranger",
+                  "items": [
+                     {
+                        "type": "link",
+                        "name": "Стрелы и Колчаны",
+                        "link": "items-ammo-arrows_and_quivers"
+                     },
+                     {
+                        "type": "group",
+                        "name": "Капканы",
+                        "id": "traps",
+                        "items": [
+                           {
+                              "type": "item",
+                              "name": "Капкан",
+                              "id": "default",
+                              "item_id": 1065
+                           },
+                           {
+                              "type": "item",
+                              "name": "Ловушка из Спецсплава",
+                              "id": "special_alloy",
+                              "item_id": 7940
+                           },
+                           {
+                              "type": "item",
+                              "name": "Коробка с Ловушками из Спецсплава",
+                              "id": "special_alloy_trap_box",
+                              "item_id": 12341
+                           }
+                        ]
+                     },
+                     {
+                        "type": "link",
+                        "name": "Элементальные Камни (маленькие)",
+                        "link": "items-elemental_stones-small"
+                     }
+                  ]
+               },
+               {
+                  "type": "group",
+                  "name": "Маэстро и Муза",
+                  "id": "maestro_and_wanderer",
+                  "items": [
+                     {
+                        "type": "link",
+                        "name": "Стрелы и Колчаны",
+                        "link": "items-ammo-arrows_and_quivers"
+                     },
+                     {
+                        "type": "item",
+                        "name": "Конфетка от Кашля",
+                        "id": "cough_drop",
+                        "item_id": 11513
+                     },
+                     {
+                        "type": "item",
+                        "name": "Слёзы Разбитого Сердца",
+                        "id": "regrettable_tear",
+                        "item_id": 6144
+                     }
+                  ]
+               },
+               {
+                  "type": "group",
+                  "name": "Архиепископ",
+                  "id": "archbishop",
+                  "items": [
+                     {
+                        "type": "item",
+                        "name": "Синий Самоцвет",
+                        "id": "blue_gemstone",
+                        "item_id": 717
+                     },
+                     {
+                        "type": "item",
+                        "name": "Святая Вода",
+                        "id": "holy_water",
+                        "item_id": 523
+                     },
+                     {
+                        "type": "item",
+                        "name": "Анцилла",
+                        "id": "ancilla",
+                        "item_id": 12333
+                     }
+                  ]
+               },
+               {
+                  "type": "group",
+                  "name": "Сура",
+                  "id": "sura",
+                  "items": [
+                     {
+                        "type": "item",
+                        "name": "Синий Самоцвет",
+                        "id": "blue_gemstone",
+                        "item_id": 717
+                     }
+                  ]
+               },
+               {
+                  "type": "group",
+                  "name": "Механик",
+                  "id": "mechanic",
+                  "items": [
+                     {
+                        "type": "group",
+                        "name": "Набор починок",
+                        "id": "repair_group",
+                        "items": [
+                           {
+                              "type": "item",
+                              "name": "Починка A",
+                              "id": "repair_a",
+                              "item_id": 12392
+                           },
+                           {
+                              "type": "item",
+                              "name": "Починка B",
+                              "id": "repair_b",
+                              "item_id": 12393
+                           },
+                           {
+                              "type": "item",
+                              "name": "Починка C",
+                              "id": "repair_c",
+                              "item_id": 12394
+                           }
+                        ]
+                     },
+                     {
+                        "type": "link",
+                        "name": "Пули и топливо",
+                        "link": "items-ammo-mechanic"
+                     },
+                     {
+                        "type": "link",
+                        "name": "Пушечные Ядра",
+                        "link": "items-ammo-cannon_balls"
+                     },
+                     {
+                        "type": "link",
+                        "name": "Метки",
+                        "link": "items-gemstones_and_points-points"
+                     },
+                     {
+                        "type": "group",
+                        "name": "Для турелей",
+                        "id": "turrels",
+                        "items": [
+                           {
+                              "type": "item",
+                              "name": "Железо",
+                              "id": "iron",
+                              "item_id": 998
+                           },
+                           {
+                              "type": "item",
+                              "name": "Сталь",
+                              "id": "steel",
+                              "item_id": 999
+                           },
+                           {
+                              "type": "item",
+                              "name": "Пулифор",
+                              "id": "brigan",
+                              "item_id": 7054
+                           }
+                        ]
+                     },
+                     {
+                        "type": "group",
+                        "name": "Починка экипировки",
+                        "id": "equip_repair",
+                        "items": [
+                           {
+                              "type": "item",
+                              "name": "Железная Руда",
+                              "id": "iron_ore",
+                              "item_id": 1002
+                           },
+                           {
+                              "type": "item",
+                              "name": "Железо",
+                              "id": "iron",
+                              "item_id": 998
+                           },
+                           {
+                              "type": "item",
+                              "name": "Сталь",
+                              "id": "steel",
+                              "item_id": 999
+                           },
+                           {
+                              "type": "item",
+                              "name": "Руда Оридекона",
+                              "id": "rough_oridecon",
+                              "item_id": 756
+                           }
+                        ]
+                     }
+                  ]
+               },
+               {
+                  "type": "group",
+                  "name": "Генетик",
+                  "id": "genetic",
+                  "items": [
+                     {
+                        "type": "group",
+                        "name": "Бросок Зелья",
+                        "id": "potion_pitcher",
+                        "items": [
+                           {
+                              "type": "link",
+                              "name": "Зелья",
+                              "link": "consumable-self_use-potions"
+                           }
+                        ]
+                     },
+                     {
+                        "type": "group",
+                        "name": "Второпрофные скилы",
+                        "id": "second_job_skills",
+                        "items": [
+                           {
+                              "type": "item",
+                              "name": "Бутылка с Морской Сферой",
+                              "id": "marine_sphere_bottle",
+                              "item_id": 7138
+                           },
+                           {
+                              "type": "item",
+                              "name": "Коктейль Молотова",
+                              "id": "bottle_grenade",
+                              "item_id": 7135
+                           },
+                           {
+                              "type": "item",
+                              "name": "Бутылка с Кислотой",
+                              "id": "acid_bottle",
+                              "item_id": 7136
+                           },
+                           {
+                              "type": "item",
+                              "name": "Бутылка с Растением",
+                              "id": "plant_bottle",
+                              "item_id": 7137
+                           },
+                           {
+                              "type": "item",
+                              "name": "Сияющий Покров",
+                              "id": "glistening_coat",
+                              "item_id": 7139
+                           },
+                           {
+                              "type": "item",
+                              "name": "Семя Жизни",
+                              "id": "seed_of_life",
+                              "item_id": 7140
+                           },
+                           {
+                              "type": "item",
+                              "name": "Зелье Берсерка",
+                              "id": "berserk",
+                              "item_id": 657
+                           }
+                        ]
+                     },
+                     {
+                        "type": "group",
+                        "name": "Третьепрофные скилы",
+                        "id": "third_job",
+                        "items": [
+                           {
+                              "type": "link",
+                              "name": "Пушечные Ядра",
+                              "link": "items-ammo-cannon_balls"
+                           },
+                           {
+                              "type": "item",
+                              "name": "Семя Шипастого Растения",
+                              "id": "seed_of_thorny_plant",
+                              "item_id": 6210
+                           },
+                           {
+                              "type": "item",
+                              "name": "Спирт",
+                              "id": "alcohol",
+                              "item_id": 970
+                           },
+                           {
+                              "type": "item",
+                              "name": "Семя Растения Кровососа",
+                              "id": "bloodsuck_plant_seed",
+                              "item_id": 6211
+                           },
+                           {
+                              "type": "item",
+                              "name": "Бутылка с Растением",
+                              "id": "plant_bottle",
+                              "item_id": 7137
+                           },
+                           {
+                              "type": "item",
+                              "name": "Горшок с Мандрагорой",
+                              "id": "madragora_flowerpot",
+                              "item_id": 6217
+                           },
+                           {
+                              "type": "item",
+                              "name": "Взрывоопасные Споры",
+                              "id": "bomb_mushroom_spore",
+                              "item_id": 6212
+                           },
+                           {
+                              "type": "item",
+                              "name": "Коктейль Молотова",
+                              "id": "bottle_grenade",
+                              "item_id": 7135
+                           },
+                           {
+                              "type": "item",
+                              "name": "Бутылка с Маслом",
+                              "id": "oil_bottle",
+                              "item_id": 6216
+                           },
+                           {
+                              "type": "item",
+                              "name": "Взрывчатый Порошок",
+                              "id": "explosive_powder",
+                              "item_id": 6213
+                           },
+                           {
+                              "type": "item",
+                              "name": "Дымный Порох",
+                              "id": "smokes_powder",
+                              "item_id": 6214
+                           },
+                           {
+                              "type": "item",
+                              "name": "Слезоточивый Газ",
+                              "id": "tear_gas",
+                              "item_id": 6215
+                           },
+                           {
+                              "type": "item",
+                              "name": "Бутылка с Кислотой",
+                              "id": "acid_bottle",
+                              "item_id": 7136
+                           }
+                        ]
+                     },
+                     {
+                        "type": "group",
+                        "name": "Еда для гомункулов",
+                        "id": "gomunkul_foods",
+                        "items": [
+                           {
+                              "type": "item",
+                              "name": "Пища Питомца",
+                              "id": "pet_food",
+                              "item_id": 537
+                           },
+                           {
+                              "type": "item",
+                              "name": "Заргон",
+                              "id": "zargon",
+                              "item_id": 912
+                           },
+                           {
+                              "type": "item",
+                              "name": "Гарлет",
+                              "id": "garlet",
+                              "item_id": 910
+                           },
+                           {
+                              "type": "item",
+                              "name": "Сцелл",
+                              "id": "scell",
+                              "item_id": 911
+                           },
+                           {
+                              "type": "item",
+                              "name": "Немного Снега",
+                              "id": "small_snow_flower",
+                              "item_id": 6098
+                           },
+                           {
+                              "type": "item",
+                              "name": "Яблочный Пуддинг",
+                              "id": "apple_pudding",
+                              "item_id": 6108
+                           },
+                           {
+                              "type": "item",
+                              "name": "Большая Клетка",
+                              "id": "big_cell",
+                              "item_id": 6104
+                           },
+                           {
+                              "type": "item",
+                              "name": "Свежая Трава",
+                              "id": "fresh_plant",
+                              "item_id": 6112
+                           },
+                           {
+                              "type": "item",
+                              "name": "Детская клёцка",
+                              "id": "bun",
+                              "item_id": 6115
+                           }
+                        ]
+                     }
+                  ]
+               },
+               {
+                  "type": "group",
+                  "name": "Ассасин Гильотины",
+                  "id": "guillotine_cross",
+                  "items": [
+                     {
+                        "type": "group",
+                        "name": "Яды",
+                        "id": "poisons",
+                        "items": [
+                           {
+                              "type": "item",
+                              "name": "Бутылка Яда",
+                              "id": "poison_bottle",
+                              "item_id": 678
+                           },
+                           {
+                              "type": "item",
+                              "name": "Яд Парализации",
+                              "id": "paralyze",
+                              "item_id": 12717
+                           },
+                           {
+                              "type": "item",
+                              "name": "Яд Лихорадки",
+                              "id": "pyrexia",
+                              "item_id": 12722
+                           },
+                           {
+                              "type": "item",
+                              "name": "Яд Загрязнения",
+                              "id": "disheart",
+                              "item_id": 12720
+                           },
+                           {
+                              "type": "item",
+                              "name": "Яд Лича",
+                              "id": "leech_end",
+                              "item_id": 12718
+                           },
+                           {
+                              "type": "item",
+                              "name": "Яд Отравления Ран",
+                              "id": "venom_bleed",
+                              "item_id": 12724
+                           },
+                           {
+                              "type": "item",
+                              "name": "Яд Волшебных Грибов",
+                              "id": "magic_nushroom",
+                              "item_id": 12723
+                           },
+                           {
+                              "type": "item",
+                              "name": "Яд Оцепенения",
+                              "id": "toxin",
+                              "item_id": 12721
+                           },
+                           {
+                              "type": "item",
+                              "name": "Яд Забвения",
+                              "id": "oblivion_curse",
+                              "item_id": 12719
+                           },
+                           {
+                              "type": "item",
+                              "name": "Коробка Бутылок Яда",
+                              "id": "poison_bottle_box2",
+                              "item_id": 12550
+                           }
+                        ]
+                     },
+                     {
+                        "type": "group",
+                        "name": "Второстепенные скилы",
+                        "id": "second_wickness_skills",
+                        "items": [
+                           {
+                              "type": "item",
+                              "name": "Красный Самоцвет",
+                              "id": "red_gemstone",
+                              "item_id": 716
+                           },
+                           {
+                              "type": "item",
+                              "name": "Красный Самоцвет",
+                              "id": "red_gemstone",
+                              "item_id": 716
+                           },
+                           {
+                              "type": "item",
+                              "name": "Камень",
+                              "id": "stone",
+                              "item_id": 7049
+                           }
+                        ]
+                     },
+                     {
+                        "type": "item",
+                        "name": "Гильотинное Противоядие",
+                        "id": "antidot",
+                        "item_id": 6128
+                     }
+                  ]
+               },
+               {
+                  "type": "group",
+                  "name": "Преследователь",
+                  "id": "shadow_chaser",
+                  "items": [
+                     {
+                        "type": "link",
+                        "name": "Стрелы и Колчаны",
+                        "link": "items-ammo-arrows_and_quivers"
+                     },
+                     {
+                        "type": "group",
+                        "name": "Маскарады и наземные скиллы",
+                        "id": "masquerades_land_skills",
+                        "items": [
+                           {
+                              "type": "item",
+                              "name": "Поверхностная Краска",
+                              "id": "surface_paint",
+                              "item_id": 6123
+                           },
+                           {
+                              "type": "item",
+                              "name": "Раскраска Лица",
+                              "id": "face_paint",
+                              "item_id": 6120
+                           }
+                        ]
+                     },
+                     {
+                        "type": "group",
+                        "name": "Второстепенные скилы",
+                        "id": "second_wickness_skills",
+                        "items": [
+                           {
+                              "type": "item",
+                              "name": "Красный Самоцвет",
+                              "id": "red_gemstone",
+                              "item_id": 716
+                           },
+                           {
+                              "type": "item",
+                              "name": "Камень",
+                              "id": "stone",
+                              "item_id": 7049
+                           }
+                        ]
+                     }
+                  ]
+               },
+               {
+                  "type": "group",
+                  "name": "Гиперновичок",
+                  "id": "hypernovice",
+                  "items": [
+                     {
+                        "type": "link",
+                        "name": "Починка экипировки",
+                        "link": "consumable-skill_use-mechanic-equip_repair"
+                     },
+                     {
+                        "type": "item",
+                        "name": "Синий Самоцвет",
+                        "id": "blue",
+                        "item_id": 717
+                     },
+                     {
+                        "type": "item",
+                        "name": "Красный Самоцвет",
+                        "id": "red",
+                        "item_id": 716
+                     },
+                     {
+                        "type": "item",
+                        "name": "Святая Вода",
+                        "id": "holy_water",
+                        "item_id": 523
+                     },
+                     {
+                        "type": "item",
+                        "name": "Капкан",
+                        "id": "default",
+                        "item_id": 1065
+                     }
+                  ]
+               },
+               {
+                  "type": "group",
+                  "name": "Повстанец",
+                  "id": "rebellion",
+                  "items": [
+                     {
+                        "type": "link",
+                        "name": "Пули, Мины, Слаги и их упаковки",
+                        "link": "items-ammo-bullets_spheres_and_cardridges"
+                     },
+                     {
+                        "type": "item",
+                        "name": "Ловушка из Спецсплава",
+                        "id": "special_alloy",
+                        "item_id": 7940
+                     },
+                     {
+                        "type": "item",
+                        "name": "Пуля с Цельнометаллической Оболочкой",
+                        "id": "full_metal_jacket",
+                        "item_id": 7663
+                     },
+                     {
+                        "type": "item",
+                        "name": "Проекционная Граната",
+                        "id": "projection_landmines",
+                        "item_id": 7664
+                     },
+                     {
+                        "type": "item",
+                        "name": "Ракета Драгонтейл",
+                        "id": "dragin_tail_missile",
+                        "item_id": 7665
+                     }
+                  ]
+               },
+               {
+                  "type": "group",
+                  "name": "Кагеро и Оборо",
+                  "id": "kagerou_oboro",
+                  "items": [
+                     {
+                        "type": "link",
+                        "name": "Сюрикены и Кунаи",
+                        "link": "items-ammo-surikens_kunais"
+                     },
+                     {
+                        "type": "group",
+                        "name": "Камни/Сферы",
+                        "id": "stone_orb",
+                        "items": [
+                           {
+                              "type": "item",
+                              "name": "Горящий Камень",
+                              "id": "flame",
+                              "item_id": 7521
+                           },
+                           {
+                              "type": "item",
+                              "name": "Ледяной Камень",
+                              "id": "ice",
+                              "item_id": 7522
+                           },
+                           {
+                              "type": "item",
+                              "name": "Ветряной Камень",
+                              "id": "wind",
+                              "item_id": 7523
+                           },
+                           {
+                              "type": "item",
+                              "name": "Теневая Сфера",
+                              "id": "shadow",
+                              "item_id": 7524
+                           }
+                        ]
+                     },
+                     {
+                        "type": "group",
+                        "name": "Амулеты",
+                        "id": "amulets",
+                        "items": [
+                           {
+                              "type": "item",
+                              "name": "Огненный Амулет",
+                              "id": "fire",
+                              "item_id": 6512
+                           },
+                           {
+                              "type": "item",
+                              "name": "Ледяной Амулет",
+                              "id": "ice",
+                              "item_id": 6513
+                           },
+                           {
+                              "type": "item",
+                              "name": "Ветряной Амулет",
+                              "id": "wind",
+                              "item_id": 6514
+                           },
+                           {
+                              "type": "item",
+                              "name": "Земляной Амулет",
+                              "id": "earth",
+                              "item_id": 6515
+                           }
+                        ]
+                     },
+                     {
+                        "type": "item",
+                        "name": "Взрывающийся Кунай",
+                        "id": "explosive_kunai",
+                        "item_id": 13294
+                     },
+                     {
+                        "type": "item",
+                        "name": "Макибиши",
+                        "id": "Makibi",
+                        "item_id": 6493
+                     }
+                  ]
+               },
+               {
+                  "type": "group",
+                  "name": "Призыватель",
+                  "id": "summoner",
+                  "items": [
+                     {
+                        "type": "item",
+                        "name": "Креветка",
+                        "id": "shrimp",
+                        "item_id": 567
+                     },
+                     {
+                        "type": "item",
+                        "name": "Фрукт Кошачьей Мяты",
+                        "id": "catnip_fruit",
+                        "item_id": 11602
+                     },
+                     {
+                        "type": "item",
+                        "name": "Морковка",
+                        "id": "carrot",
+                        "item_id": 515
+                     }
+                  ]
+               }
+            ]
+         }
+      ]
+   },
+   {
+      "type": "group",
+      "name": "Предметы",
+      "id": "items",
+      "items": [
+         {
+            "type": "group",
+            "name": "Элементальные Камни",
+            "id": "elemental_stones",
+            "items": [
+               {
+                  "type": "group",
+                  "name": "Маленькие",
+                  "id": "small",
+                  "items": [
+                     {
+                        "type": "item",
+                        "name": "Кристальная Синева",
+                        "id": "crystal_blue",
+                        "item_id": 991
+                     },
+                     {
+                        "type": "item",
+                        "name": "Ветер Свежести",
+                        "id": "wind_of_verdure",
+                        "item_id": 992
+                     },
+                     {
+                        "type": "item",
+                        "name": "Зелёная Жизнь",
+                        "id": "green_live",
+                        "item_id": 993
+                     },
+                     {
+                        "type": "item",
+                        "name": "Красная Кровь",
+                        "id": "red_blood",
+                        "item_id": 990
+                     }
+                  ]
+               },
+               {
+                  "type": "group",
+                  "name": "Большие",
+                  "id": "large",
+                  "items": [
+                     {
+                        "type": "item",
+                        "name": "Мистический Мороз",
+                        "id": "mystic_frozen",
+                        "item_id": 995
+                     },
+                     {
+                        "type": "item",
+                        "name": "Порывистый Ветер",
+                        "id": "rough_wind",
+                        "item_id": 996
+                     },
+                     {
+                        "type": "item",
+                        "name": "Великая Природа",
+                        "id": "great_nature",
+                        "item_id": 997
+                     },
+                     {
+                        "type": "item",
+                        "name": "Пламенное Сердце",
+                        "id": "flame_heart",
+                        "item_id": 994
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "type": "group",
+            "name": "Самоцветы и метки",
+            "id": "gemstones_and_points",
+            "items": [
+               {
+                  "type": "group",
+                  "name": "Самоцветы",
+                  "id": "gemstones",
+                  "items": [
+                     {
+                        "type": "item",
+                        "name": "Жёлтый Самоцвет",
+                        "id": "yellow",
+                        "item_id": 715
+                     },
+                     {
+                        "type": "item",
+                        "name": "Красный Самоцвет",
+                        "id": "red",
+                        "item_id": 716
+                     },
+                     {
+                        "type": "item",
+                        "name": "Синий Самоцвет",
+                        "id": "blue",
+                        "item_id": 717
+                     }
+                  ]
+               },
+               {
+                  "type": "group",
+                  "name": "Метки",
+                  "id": "points",
+                  "items": [
+                     {
+                        "type": "item",
+                        "name": "Алая Метка",
+                        "id": "scarlet",
+                        "item_id": 6360
+                     },
+                     {
+                        "type": "item",
+                        "name": "Индиговая Метка",
+                        "id": "indigo",
+                        "item_id": 6361
+                     },
+                     {
+                        "type": "item",
+                        "name": "Жёлтая Метка",
+                        "id": "yellow_wish",
+                        "item_id": 6362
+                     },
+                     {
+                        "type": "item",
+                        "name": "Зелёная Метка",
+                        "id": "lime_green",
+                        "item_id": 6363
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "type": "group",
+            "name": "Боеприпасы",
+            "id": "ammo",
+            "items": [
+               {
+                  "type": "group",
+                  "name": "Сюрикены и Кунаи",
+                  "id": "surikens_kunais",
+                  "items": [
+                     {
+                        "type": "group",
+                        "name": "Сюрикены",
+                        "id": "surikens",
+                        "items": [
+                           {
+                              "type": "item",
+                              "name": "Сюрикен",
+                              "id": "default",
+                              "item_id": 13250
+                           },
+                           {
+                              "type": "item",
+                              "name": "Лёгкий Сюрикен",
+                              "id": "light",
+                              "item_id": 13295
+                           },
+                           {
+                              "type": "item",
+                              "name": "Сюрикен Дождливого Облака",
+                              "id": "nimbus",
+                              "item_id": 13251
+                           },
+                           {
+                              "type": "item",
+                              "name": "Ослепляющий Сюрикен",
+                              "id": "flash",
+                              "item_id": 13252
+                           },
+                           {
+                              "type": "item",
+                              "name": "Сюрикен Острого Листа",
+                              "id": "sharp_leaf",
+                              "item_id": 13253
+                           },
+                           {
+                              "type": "item",
+                              "name": "Сюрикен Пронизывающих Шипов",
+                              "id": "thorn_neddle",
+                              "item_id": 13254
+                           }
+                        ]
+                     },
+                     {
+                        "type": "group",
+                        "name": "Кунаи",
+                        "id": "kunais",
+                        "items": [
+                           {
+                              "type": "item",
+                              "name": "Кунай Замороженного Ледника",
+                              "id": "icicle",
+                              "item_id": 13255
+                           },
+                           {
+                              "type": "item",
+                              "name": "Кунай Чёрной Земли",
+                              "id": "black_earth",
+                              "item_id": 13256
+                           },
+                           {
+                              "type": "item",
+                              "name": "Кунай Жестоких Ветров",
+                              "id": "high_wind",
+                              "item_id": 13257
+                           },
+                           {
+                              "type": "item",
+                              "name": "Кунай Адской Жары",
+                              "id": "heat_wave",
+                              "item_id": 13258
+                           },
+                           {
+                              "type": "item",
+                              "name": "Кунай Смертельного Яда",
+                              "id": "fell_poison",
+                              "item_id": 13259
+                           }
+                        ]
+                     }
+                  ]
+               },
+               {
+                  "type": "group",
+                  "name": "Пули, Мины и их упаковки",
+                  "id": "bullets_spheres_and_cardridges",
+                  "items": [
+                     {
+                        "type": "group",
+                        "name": "Пули",
+                        "id": "bullets",
+                        "items": [
+                           {
+                              "type": "group",
+                              "name": "Первопрофные пули",
+                              "id": "first_job",
+                              "items": [
+                                 {
+                                    "type": "item",
+                                    "name": "Пуля",
+                                    "id": "default",
+                                    "item_id": 13200
+                                 },
+                                 {
+                                    "type": "hidden-group",
+                                    "name": "Серебряная Пуля",
+                                    "id": "silver",
+                                    "items": [
+                                       {
+                                          "type": "item",
+                                          "name": "-",
+                                          "id": "1",
+                                          "item_id": 13201
+                                       },
+                                       {
+                                          "type": "item",
+                                          "name": "-",
+                                          "id": "2",
+                                          "item_id": 13221
+                                       }
+                                    ]
+                                 },
+                                 {
+                                    "type": "hidden-group",
+                                    "name": "Кровавая Пуля",
+                                    "id": "bloody",
+                                    "items": [
+                                       {
+                                          "type": "item",
+                                          "name": "-",
+                                          "id": "1",
+                                          "item_id": 13202
+                                       },
+                                       {
+                                          "type": "item",
+                                          "name": "-",
+                                          "id": "2",
+                                          "item_id": 13222
+                                       }
+                                    ]
+                                 },
+                                 {
+                                    "type": "item",
+                                    "name": "Зажигательная Пуля",
+                                    "id": "flare",
+                                    "item_id": 13228
+                                 },
+                                 {
+                                    "type": "item",
+                                    "name": "Электрическая Пуля",
+                                    "id": "lightning",
+                                    "item_id": 13229
+                                 },
+                                 {
+                                    "type": "item",
+                                    "name": "Ледяная Пуля",
+                                    "id": "ice",
+                                    "item_id": 13230
+                                 },
+                                 {
+                                    "type": "item",
+                                    "name": "Ядовитая Пуля",
+                                    "id": "poison",
+                                    "item_id": 13231
+                                 },
+                                 {
+                                    "type": "item",
+                                    "name": "Ослепляющая Пуля",
+                                    "id": "blind",
+                                    "item_id": 13232
+                                 }
+                              ]
+                           },
+                           {
+                              "type": "group",
+                              "name": "3 профные",
+                              "id": "third_job",
+                              "items": [
+                                 {
+                                    "type": "item",
+                                    "name": "Бронебойная Пуля",
+                                    "id": "armor_burnt",
+                                    "item_id": 13215
+                                 },
+                                 {
+                                    "type": "item",
+                                    "name": "Накаливающая Пуля",
+                                    "id": "incandescence_shot",
+                                    "item_id": 13216
+                                 },
+                                 {
+                                    "type": "item",
+                                    "name": "Оледеняющая Пуля",
+                                    "id": "glaciation_shot",
+                                    "item_id": 13217
+                                 },
+                                 {
+                                    "type": "item",
+                                    "name": "Наэлектризованная Пуля",
+                                    "id": "dengeki_shot",
+                                    "item_id": 13218
+                                 },
+                                 {
+                                    "type": "item",
+                                    "name": "Пуля с Каменным Сердечником",
+                                    "id": "hearthstone_shot",
+                                    "item_id": 13219
+                                 },
+                                 {
+                                    "type": "item",
+                                    "name": "Очищающая Пуля",
+                                    "id": "purification_shot",
+                                    "item_id": 13220
+                                 }
+                              ]
+                           },
+                           {
+                              "type": "group",
+                              "name": "Упаковки Пуль",
+                              "id": "cartridge",
+                              "items": [
+                                 {
+                                    "type": "item",
+                                    "name": "Упаковка Пуль",
+                                    "id": "default",
+                                    "item_id": 12149
+                                 },
+                                 {
+                                    "type": "item",
+                                    "name": "Упаковка Кровавых Пуль",
+                                    "id": "blood",
+                                    "item_id": 12150
+                                 },
+                                 {
+                                    "type": "item",
+                                    "name": "Упаковка Серебряных Пуль",
+                                    "id": "silver",
+                                    "item_id": 12151
+                                 },
+                                 {
+                                    "type": "item",
+                                    "name": "Упаковка Оледеняющих Пуль",
+                                    "id": "glaciation_shot",
+                                    "item_id": 22746
+                                 }
+                              ]
+                           }
+                        ]
+                     },
+                     {
+                        "type": "group",
+                        "name": "Мины",
+                        "id": "spheres",
+                        "items": [
+                           {
+                              "type": "group",
+                              "name": "Упаковки",
+                              "id": "pack",
+                              "items": [
+                                 {
+                                    "type": "item",
+                                    "name": "Упаковка Электрических Мин",
+                                    "id": "lightning",
+                                    "item_id": 12144
+                                 },
+                                 {
+                                    "type": "item",
+                                    "name": "Упаковка Ослепляющих Мин",
+                                    "id": "blind",
+                                    "item_id": 12145
+                                 },
+                                 {
+                                    "type": "item",
+                                    "name": "Упаковка Ядовитых Мин",
+                                    "id": "poison",
+                                    "item_id": 12146
+                                 },
+                                 {
+                                    "type": "item",
+                                    "name": "Упаковка Замораживающих Мин",
+                                    "id": "freezing",
+                                    "item_id": 12147
+                                 },
+                                 {
+                                    "type": "item",
+                                    "name": "Упаковка Зажигательных Мин",
+                                    "id": "flare",
+                                    "item_id": 12148
+                                 }
+                              ]
+                           },
+                           {
+                              "type": "group",
+                              "name": "Мины",
+                              "id": "spheres",
+                              "items": [
+                                 {
+                                    "type": "item",
+                                    "name": "Зажигательная Мина",
+                                    "id": "flare",
+                                    "item_id": 13203
+                                 },
+                                 {
+                                    "type": "item",
+                                    "name": "Электрическая Мина",
+                                    "id": "lightning",
+                                    "item_id": 13204
+                                 },
+                                 {
+                                    "type": "item",
+                                    "name": "Ядовитая Мина",
+                                    "id": "poison",
+                                    "item_id": 13205
+                                 },
+                                 {
+                                    "type": "item",
+                                    "name": "Замораживающая Мина",
+                                    "id": "freezing",
+                                    "item_id": 13207
+                                 }
+                              ]
+                           }
+                        ]
+                     },
+                     {
+                        "type": "group",
+                        "name": "Слаг Патроны",
+                        "id": "slug_ammunitions",
+                        "items": [
+                           {
+                              "type": "item",
+                              "name": "Слаг-Патрон L",
+                              "id": "l",
+                              "item_id": 13210
+                           },
+                           {
+                              "type": "item",
+                              "name": "Слаг-Патрон M",
+                              "id": "m",
+                              "item_id": 13211
+                           },
+                           {
+                              "type": "item",
+                              "name": "Слаг-Патрон H",
+                              "id": "h",
+                              "item_id": 13212
+                           },
+                           {
+                              "type": "item",
+                              "name": "Слаг-Патрон SH",
+                              "id": "sh",
+                              "item_id": 13213
+                           },
+                           {
+                              "type": "item",
+                              "name": "Слаг-Патрон XH",
+                              "id": "xh",
+                              "item_id": 13214
+                           }
+                        ]
+                     }
+                  ]
+               },
+               {
+                  "type": "group",
+                  "name": "Пушечные Ядра",
+                  "id": "cannon_balls",
+                  "items": [
+                     {
+                        "type": "item",
+                        "name": "Пушечное Ядро",
+                        "id": "default",
+                        "item_id": 18000
+                     },
+                     {
+                        "type": "item",
+                        "name": "Пушечное Ядро Святости",
+                        "id": "holy",
+                        "item_id": 18001
+                     },
+                     {
+                        "type": "item",
+                        "name": "Пушечное Ядро Тьмы",
+                        "id": "dark",
+                        "item_id": 18002
+                     },
+                     {
+                        "type": "item",
+                        "name": "Пушечное Ядро Души",
+                        "id": "soul",
+                        "item_id": 18003
+                     },
+                     {
+                        "type": "item",
+                        "name": "Пушечное Ядро из Железа",
+                        "id": "iron",
+                        "item_id": 18004
+                     }
+                  ]
+               },
+               {
+                  "type": "group",
+                  "name": "Пули и топливо механика",
+                  "id": "mechanic",
+                  "items": [
+                     {
+                        "type": "item",
+                        "name": "Волшебное топливо",
+                        "id": "magic_gear_fuel",
+                        "item_id": 6146
+                     },
+                     {
+                        "type": "item",
+                        "name": "Вулканическая Пуля",
+                        "id": "vulcan_bullet",
+                        "item_id": 6145
+                     },
+                     {
+                        "type": "item",
+                        "name": "Жидкая Конденсированная Пуля",
+                        "id": "luqiud_condensed_bullet",
+                        "item_id": 6147
+                     }
+                  ]
+               },
+               {
+                  "type": "group",
+                  "name": "Стрелы и Колчаны",
+                  "id": "arrows_and_quivers",
+                  "items": [
+                     {
+                        "type": "group",
+                        "name": "Нейтральные",
+                        "id": "neutrals",
+                        "items": [
+                           {
+                              "type": "item",
+                              "name": "Стрела",
+                              "id": "default",
+                              "item_id": 1750
+                           },
+                           {
+                              "type": "item",
+                              "name": "Железная Стрела",
+                              "id": "iron",
+                              "item_id": 1770
+                           },
+                           {
+                              "type": "item",
+                              "name": "Стальная Стрела",
+                              "id": "steel",
+                              "item_id": 1753
+                           },
+                           {
+                              "type": "item",
+                              "name": "Оридеконовая Стрела",
+                              "id": "oridecon",
+                              "item_id": 1765
+                           },
+                           {
+                              "type": "item",
+                              "name": "Эльфийская Стрела",
+                              "id": "elven",
+                              "item_id": 1773
+                           },
+                           {
+                              "type": "item",
+                              "name": "Охотничья Стрела",
+                              "id": "hunting",
+                              "item_id": 1774
+                           },
+                           {
+                              "type": "item",
+                              "name": "Оглушающая Стрела",
+                              "id": "stun",
+                              "item_id": 1758
+                           },
+                           {
+                              "type": "item",
+                              "name": "Проклинающая Стрела",
+                              "id": "cursed",
+                              "item_id": 1761
+                           },
+                           {
+                              "type": "item",
+                              "name": "Безмолвная Стрела",
+                              "id": "mute",
+                              "item_id": 1769
+                           },
+                           {
+                              "type": "item",
+                              "name": "Ослепляющая Стрела",
+                              "id": "flash",
+                              "item_id": 1760
+                           },
+                           {
+                              "type": "item",
+                              "name": "Усыпляющая Стрела",
+                              "id": "sleep",
+                              "item_id": 1768
+                           },
+                           {
+                              "type": "item",
+                              "name": "Острая Стрела",
+                              "id": "sharp",
+                              "item_id": 1764
+                           }
+                        ]
+                     },
+                     {
+                        "type": "group",
+                        "name": "Элементальные",
+                        "id": "elementals",
+                        "items": [
+                           {
+                              "type": "item",
+                              "name": "Серебряная Стрела",
+                              "id": "silver",
+                              "item_id": 1751
+                           },
+                           {
+                              "type": "item",
+                              "name": "Огненная Стрела",
+                              "id": "fire",
+                              "item_id": 1752
+                           },
+                           {
+                              "type": "item",
+                              "name": "Кристалическая Стрела",
+                              "id": "crystal",
+                              "item_id": 1754
+                           },
+                           {
+                              "type": "item",
+                              "name": "Ветряная Стрела",
+                              "id": "wind",
+                              "item_id": 1755
+                           },
+                           {
+                              "type": "item",
+                              "name": "Каменная Стрела",
+                              "id": "stone",
+                              "item_id": 1756
+                           },
+                           {
+                              "type": "item",
+                              "name": "Призрачная Стрела",
+                              "id": "immaterial",
+                              "item_id": 1757
+                           },
+                           {
+                              "type": "item",
+                              "name": "Ржавая Стрела",
+                              "id": "rusty",
+                              "item_id": 1762
+                           },
+                           {
+                              "type": "item",
+                              "name": "Теневая Стрела",
+                              "id": "shadow",
+                              "item_id": 1767
+                           },
+                           {
+                              "type": "item",
+                              "name": "Замораживающая Стрела",
+                              "id": "frozen",
+                              "item_id": 1759
+                           },
+                           {
+                              "type": "item",
+                              "name": "Отравляющая Стрела",
+                              "id": "poison",
+                              "item_id": 1763
+                           },
+                           {
+                              "type": "item",
+                              "name": "Святая Стрела",
+                              "id": "holy",
+                              "item_id": 1772
+                           }
+                        ]
+                     },
+                     {
+                        "type": "group",
+                        "name": "Колчаны",
+                        "id": "quivers",
+                        "items": [
+                           {
+                              "type": "item",
+                              "name": "Колчан",
+                              "id": "default",
+                              "item_id": 12004
+                           },
+                           {
+                              "type": "item",
+                              "name": "Колчан Железных Стрел",
+                              "id": "iron_arrow",
+                              "item_id": 12005
+                           },
+                           {
+                              "type": "item",
+                              "name": "Колчан Стальных Стрел",
+                              "id": "steel_arrow",
+                              "item_id": 12006
+                           },
+                           {
+                              "type": "item",
+                              "name": "Колчан Оридеконовых Стрел",
+                              "id": "oridecon_arrow",
+                              "item_id": 12007
+                           },
+                           {
+                              "type": "item",
+                              "name": "Колчан Огненных Стрел",
+                              "id": "fire_arrow",
+                              "item_id": 12008
+                           },
+                           {
+                              "type": "item",
+                              "name": "Колчан Серебряных Стрел",
+                              "id": "silver_arrow",
+                              "item_id": 12009
+                           },
+                           {
+                              "type": "item",
+                              "name": "Колчан Ветряных Стрел",
+                              "id": "wind_arrow",
+                              "item_id": 12010
+                           },
+                           {
+                              "type": "item",
+                              "name": "Колчан Каменных Стрел",
+                              "id": "stone_arrow",
+                              "item_id": 12011
+                           },
+                           {
+                              "type": "item",
+                              "name": "Колчан Кристаллических Стрел",
+                              "id": "crystall_arrow",
+                              "item_id": 12012
+                           },
+                           {
+                              "type": "item",
+                              "name": "Колчан Теневых Стрел",
+                              "id": "shadow_arrow",
+                              "item_id": 12013
+                           },
+                           {
+                              "type": "item",
+                              "name": "Колчан Призрачных Стрел",
+                              "id": "immaterial_arrow",
+                              "item_id": 12014
+                           },
+                           {
+                              "type": "item",
+                              "name": "Колчан Ржавых Стрел",
+                              "id": "rusty_arrow",
+                              "item_id": 12015
+                           }
+                        ]
+                     },
+                     {
+                        "type": "group",
+                        "name": "ГВ Стрелы и Колчаны",
+                        "id": "siege",
+                        "items": [
+                           {
+                              "type": "item",
+                              "name": "Осадная Крафтовая Стрела S",
+                              "id": "craft_arrow_s",
+                              "item_id": 1775
+                           },
+                           {
+                              "type": "item",
+                              "name": "Осадная Крафтовая Стрела A",
+                              "id": "craft_arrow_a",
+                              "item_id": 1776
+                           },
+                           {
+                              "type": "item",
+                              "name": "Осадный Колчан Стрел S",
+                              "id": "arrow_quiver_s",
+                              "item_id": 12677
+                           },
+                           {
+                              "type": "item",
+                              "name": "Осадный Колчан Стрел A",
+                              "id": "arrow_quiver_a",
+                              "item_id": 12678
+                           }
+                        ]
+                     }
+                  ]
+               }
+            ]
+         }
+      ]
+   }
+]

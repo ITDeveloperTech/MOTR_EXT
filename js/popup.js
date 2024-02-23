@@ -51,6 +51,14 @@ class PopupController {
    async uploadSettings() {
       await this.uploadCheckboxSettings();
       await this.uploadCollapseGroupSettings();
+      this.uploadHrefs();
+   }
+
+   uploadHrefs() {
+      let aTags = document.querySelectorAll(".btn-newwindow");
+      for (let aTag of aTags) {
+         aTags.href = `chrome-extension://${chrome.runtime.id}/${aTags.href}`;
+      }
    }
 
    async uploadCheckboxSettings() {

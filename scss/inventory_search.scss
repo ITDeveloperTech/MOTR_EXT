@@ -1,0 +1,331 @@
+@import "reset.scss";
+@import "fonts.scss";
+
+.checkbox {
+   &.plus-minus {
+      &.bounce {
+         input:checked {
+            --s: 1px;
+         }
+         input:checked:hover {
+            --s: 2px;
+         }
+         svg {
+            --scale: 1;
+            --stroke: var(--border-active);
+         }
+      }
+      --s: 1px;
+      --b: var(--border-active);
+
+      input + svg {
+         polyline.minus {
+            display: none;
+         }
+      }
+      input:checked + svg {
+         --s: 1px;
+         polyline.minus {
+            display: block;
+         }
+         polyline.plus {
+            display: none;
+         }
+      }
+   }
+
+   &.triple-state {
+      svg > rect {
+         display: none
+      }
+      &.active {
+         svg > rect {
+            display: block;
+            fill: var(--tick);
+         }
+         svg > polyline {
+            display: none;
+         }
+      }
+   }
+
+   --background: inherit;
+   --border: #917657;
+   --border-hover: #755c3f;
+   --border-active: #3f2d19;
+   --tick: #fff;
+   --disabled: #ccc;
+   position: relative;
+   display: flex;
+   input,
+   svg {
+      justify-self: center;
+      width: 21px;
+      height: 21px;
+      display: block;
+   }
+   input {
+      appearance: none;
+      position: relative;
+      outline: none;
+      background: var(--background);
+      border: none;
+      margin: 0;
+      padding: 0;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: box-shadow 0.3s;
+      box-shadow: inset 0 0 0 var(--s, 1px) var(--b, var(--border));
+      &:disabled {
+         --b: var(--disabled);
+         background: #ddd;
+      }
+      &:hover {
+         --s: 2px;
+         --b: var(--border-hover);
+         &:disabled {
+            --b: var(--disabled);
+         }
+      }
+      &:checked {
+         --b: var(--border-active);
+      }
+   }
+   svg {
+      pointer-events: none;
+      fill: none;
+      stroke-width: 2px;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke: var(--stroke, var(--border-active));
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 21px;
+      height: 21px;
+      transform: scale(var(--scale, 1)) translateZ(0);
+   }
+   &.bounce {
+      --stroke: var(--tick);
+      input {
+         &:checked {
+            --s: 11px;
+            & + svg {
+               animation: bounce 0.4s linear forwards 0.2s;
+            }
+         }
+      }
+      svg {
+         --scale: 0;
+      }
+   }
+   @keyframes bounce {
+      50% {
+         transform: scale(1.2);
+      }
+      75% {
+         transform: scale(0.9);
+      }
+      100% {
+         transform: scale(1);
+      }
+   }
+
+   & > span {
+      padding-left: 5px;
+      align-self: center;
+   }
+}
+
+.warning_text {
+   padding: 10px;
+   display: inline-flex;
+   align-items: center;
+}
+
+body {
+   font-family: "Helvetica-Neue";
+   background: #faf9f9;
+}
+
+h1 {
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   font-size: 2em;
+   font-weight: 500;
+   margin: 10px 0;
+}
+
+h2 {
+   font-size: 1.3em;
+}
+
+.search-settings {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   #search-submit {
+      margin: 10px 0;
+   }
+   .settings-group {
+      .settings-item {
+         display: block;
+      }
+      .search-item {
+         margin-bottom: 0;
+         & > label {
+            display: inline-flex;
+            margin-bottom: 5px;
+         }
+         & > ul {
+            margin-left: 10px;
+            &:not(:has(ul > li > ul)) {
+               margin-left: 35px;
+            }
+         }
+         &:has( > label.plus-minus > input) > ul {
+            display: none;
+         }
+         &:has( > label.plus-minus > input:checked) > ul {
+            display: block;
+         }
+      }
+      background: #fcf1e4;
+      min-width: 300px;
+      border: 1px solid #917657;
+      padding: 10px;
+      ul {
+         display: block;
+         li {
+            margin-bottom: 5px;
+            display: block;
+         }
+         li:last-child {
+            margin-bottom: 0;
+         }
+      }
+      &#char-settings,
+      &#search-type-settings {
+         flex-grow: 1;
+      }
+      &#search-group-settings {
+         flex-basis: 100%;
+      }
+   }
+   .search-button {
+      padding: 10px;
+      display: inline-block;
+      text-decoration: none;
+      &:hover {
+         background: #c4a785;
+         border-color: #917657;
+      }
+      background: #f7dcba;
+      border: 1px solid #c4a785;
+      padding: 10px;
+      color: black;
+      font-weight: 400;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.15s ease-out;
+      width: 150px;
+      display: flex;
+      justify-content: center;
+   }
+}
+
+span.display-block {
+   display: inline-block;
+   padding-left: 5px;
+}
+input.input_text {
+   padding: 5px;
+   border-radius: 5px;
+   font-size: inherit;
+   background: #fcf1e4;
+   &:focus {
+      background: #f7e3cc;
+   }
+}
+
+.search-results-table {
+   border: 1px solid #917657;
+   background: #fcf1e4;
+   padding: 5px;
+   z-index: 10;
+   h2 {
+      padding: 5px;
+      border-bottom: 1px solid #917657;
+   }
+   & > ul > li, & > ul {
+      display: block;
+   }
+   .search-result {
+      & table {
+         width: 100%;
+         margin-bottom: 20px;
+         border-collapse: collapse; 
+      }
+      & table th {
+         font-weight: bold;
+         padding: 5px;
+         background: inherit;
+         border: 1px solid #917657;
+      }
+      & table td {
+         border: 1px solid #917657;
+         padding: 5px;
+      }
+      & table tr:hover {
+         background: #ceb598;
+      }
+      & table tr td:first-child, table tr th:first-child {
+         border-left: none;
+      }
+      & table tr td:last-child, table tr th:last-child {
+         border-right: none;
+      }
+   }
+}
+
+.loading-layout {
+   position: fixed;
+   width: 100%;
+   height: 100%;
+   left: 0;
+   top: 0;
+   z-index: 50;
+   background: #fcf1e4;
+   display: none;
+   & > * {
+      margin-bottom: 10px;
+   }
+   @keyframes rotateImg{
+      from { transform: rotate(0deg);}
+      to {transform: rotate(360deg);}
+   }
+   img {
+      animation: rotateImg 1s infinite;
+   }
+   &.show {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+   }
+}
+
+input#quick_search_input {
+   position: relative;
+   & + .search-modal {
+      display: none;
+      position: absolute;
+      &.show {
+         display: inline-block;
+      }
+      tbody > tr {
+         cursor: pointer;
+      }
+   }
+}
