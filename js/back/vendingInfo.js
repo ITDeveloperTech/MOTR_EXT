@@ -41,6 +41,35 @@ class VendingInfo {
             border-radius: 3px;
          }
       `);
+      document.styleSheets[0].insertRule(`
+         .popup-container {
+            font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+            position:fixed;
+            padding: 5px;
+            border-radius: 5px;
+            background: #e2c6a5;
+            border: 1px solid #917657;
+            height: 25px;
+            transition: transform 0.3s ease-out;
+            display: inline-flex;
+            align-items: center;
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%, 100%);
+            z-index: 20;
+         }
+      `);
+      document.styleSheets[0].insertRule(`
+         .popup-container.show {
+            transform: translate(-50%, -15px);
+         }
+      `);
+      if (document.querySelector(".popup-container") === null) {
+         let popup_container = document.createElement("div");
+         popup_container.classList.add("popup-container");
+         document.body.append(popup_container);
+      }
+
       let tdTags;
       if (document.querySelector("input[name=searchVendingHistory]").checked) {
          tdTags = document.querySelectorAll(".top1 td:nth-child(2), .top2 td:nth-child(2)")
@@ -53,6 +82,13 @@ class VendingInfo {
          image.src = "https://cdn-icons-png.flaticon.com/128/7263/7263329.png";
          image.addEventListener("click", (event) => {
             window.navigator.clipboard.writeText(event.target.parentElement.innerText);
+            clearInterval(window.popupTimeout);
+            let popup_container = document.querySelector(".popup-container");
+            popup_container.classList.add("show");
+            popup_container.innerText = "Навигация скопирована в буфер обмена";
+            window.popupTimeout = setTimeout(()=>{
+               document.querySelector(".popup-container").classList.remove("show");
+            }, 1500);
          });
          tdTag.insertBefore(image, tdTag.childNodes[0]);
       }

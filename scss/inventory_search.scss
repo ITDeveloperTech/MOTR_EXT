@@ -36,7 +36,7 @@
 
    &.triple-state {
       svg > rect {
-         display: none
+         display: none;
       }
       &.active {
          svg > rect {
@@ -184,10 +184,10 @@ h2 {
                margin-left: 35px;
             }
          }
-         &:has( > label.plus-minus > input) > ul {
+         &:has(> label.plus-minus > input) > ul {
             display: none;
          }
-         &:has( > label.plus-minus > input:checked) > ul {
+         &:has(> label.plus-minus > input:checked) > ul {
             display: block;
          }
       }
@@ -258,14 +258,15 @@ input.input_text {
       padding: 5px;
       border-bottom: 1px solid #917657;
    }
-   & > ul > li, & > ul {
+   & > ul > li,
+   & > ul {
       display: block;
    }
    .search-result {
       & table {
          width: 100%;
          margin-bottom: 20px;
-         border-collapse: collapse; 
+         border-collapse: collapse;
       }
       & table th {
          font-weight: bold;
@@ -281,11 +282,13 @@ input.input_text {
       &.hover table tr:hover {
          background: #ceb598;
       }
-      
-      & table tr td:first-child, table tr th:first-child {
+
+      & table tr td:first-child,
+      table tr th:first-child {
          border-left: none;
       }
-      & table tr td:last-child, table tr th:last-child {
+      & table tr td:last-child,
+      table tr th:last-child {
          border-right: none;
       }
    }
@@ -303,9 +306,13 @@ input.input_text {
    & > * {
       margin-bottom: 10px;
    }
-   @keyframes rotateImg{
-      from { transform: rotate(0deg);}
-      to {transform: rotate(360deg);}
+   @keyframes rotateImg {
+      from {
+         transform: rotate(0deg);
+      }
+      to {
+         transform: rotate(360deg);
+      }
    }
    img {
       animation: rotateImg 1s infinite;
@@ -344,7 +351,7 @@ img.motrSettings-smallLinkButton {
    padding: 2px;
    cursor: pointer;
    margin-right: 5px;
-   border: 1px solid #8796A3;
+   border: 1px solid #8796a3;
    border-radius: 3px;
    & + * {
       vertical-align: middle;
@@ -352,21 +359,20 @@ img.motrSettings-smallLinkButton {
 }
 
 .popup-container {
-   position:fixed;
+   position: fixed;
    padding: 5px;
    border-radius: 5px;
    background: #e2c6a5;
    border: 1px solid #917657;
-   margin-bottom: -25px;
    height: 25px;
-   transition: margin-bottom 0.3s ease-out;
+   transition: transform 0.3s ease-out;
    display: inline-flex;
-   justify-self: center;
+   align-items: center;
    bottom: 0;
    left: 50%;
-   transform: translateX(-50%);
+   transform: translate(-50%, 100%);
    z-index: 20;
    &.show {
-      margin-bottom: 15px;
+      transform: translate(-50%, -15px);
    }
 }

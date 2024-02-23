@@ -396,10 +396,12 @@ input.input_text:focus {
 .search-results-table .search-result.hover table tr:hover {
   background: #ceb598;
 }
-.search-results-table .search-result table tr td:first-child, .search-results-table .search-result table tr th:first-child {
+.search-results-table .search-result table tr td:first-child,
+.search-results-table .search-result table tr th:first-child {
   border-left: none;
 }
-.search-results-table .search-result table tr td:last-child, .search-results-table .search-result table tr th:last-child {
+.search-results-table .search-result table tr td:last-child,
+.search-results-table .search-result table tr th:last-child {
   border-right: none;
 }
 
@@ -486,7 +488,7 @@ img.motrSettings-smallLinkButton {
   padding: 2px;
   cursor: pointer;
   margin-right: 5px;
-  border: 1px solid #8796A3;
+  border: 1px solid #8796a3;
   border-radius: 3px;
 }
 img.motrSettings-smallLinkButton + * {
@@ -499,21 +501,24 @@ img.motrSettings-smallLinkButton + * {
   border-radius: 5px;
   background: #e2c6a5;
   border: 1px solid #917657;
-  margin-bottom: -25px;
   height: 25px;
-  -webkit-transition: margin-bottom 0.3s ease-out;
-  transition: margin-bottom 0.3s ease-out;
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  transition: -webkit-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -ms-grid-column-align: center;
-      justify-self: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   bottom: 0;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  -webkit-transform: translate(-50%, 100%);
+          transform: translate(-50%, 100%);
   z-index: 20;
 }
 .popup-container.show {
-  margin-bottom: 15px;
+  -webkit-transform: translate(-50%, -15px);
+          transform: translate(-50%, -15px);
 }
