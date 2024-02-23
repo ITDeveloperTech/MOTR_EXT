@@ -586,6 +586,20 @@ class InventorySearchController {
       document.querySelector(".loading-layout").classList.remove("show");
    }
 
+   show_popup(desc) {
+      let this_object = window.controller;
+      clearTimeout(this_object.popupTimeout);
+      let popup_container = document.querySelector(".popup-container");
+      popup_container.classList.add("show");
+      popup_container.innerText = desc;
+      this_object.popupTimeout = setTimeout(this_object.close_popup, 2000);
+   }
+
+   close_popup() {
+      let popup_container = document.querySelector(".popup-container");
+      popup_container.classList.remove("show");
+   }
+
    async getVendingInfo(item_id, vending_type = 0) {
       let this_object = window.controller;
       let vending_result_DOM = [];
@@ -638,6 +652,32 @@ class InventorySearchController {
       for (let i = 1; i < trs.length; i++) {
          let cloneTRTag = trs[i].cloneNode(true);
          let img = cloneTRTag.querySelector("img");
+         let firstTD = cloneTRTag.querySelector("td:nth-child(1)");
+         if (firstTD !== null) {
+            let doc_fragment = document.createDocumentFragment()
+            while (firstTD.childNodes.length > 0) {
+               doc_fragment.append(firstTD.childNodes[0]);
+            }
+            
+            let mainDiv = document.createElement("DIV");
+            mainDiv.classList.add("flex-row-center")
+            let spanTag = document.createElement("SPAN");
+            spanTag.append(doc_fragment);
+
+            let imgTag = document.createElement("IMG");
+            imgTag.classList.add("motrSettings-smallLinkButton");
+            imgTag.src = `https://cdn-icons-png.flaticon.com/128/7263/7263329.png`;
+            imgTag.addEventListener("click", (event) => {
+               window.navigator.clipboard.writeText(event.target.parentElement.innerText);
+               let this_object = window.controller;
+               this_object.show_popup("Навигация скопирована в буфер обмена");
+            })
+            // firstTD.insertAdjacentElement("afterBegin", imgTag);
+            
+            mainDiv.append(imgTag);
+            mainDiv.append(spanTag);
+            firstTD.append(mainDiv);
+         }
          if (img !== null) {
             img.src = img.src.replaceAll("//", "https://").replaceAll("dbpic/", "dbpic_/").replaceAll("chrome-extension:", "");
          }

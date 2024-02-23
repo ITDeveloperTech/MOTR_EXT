@@ -391,8 +391,9 @@ input.input_text:focus {
 .search-results-table .search-result table td {
   border: 1px solid #917657;
   padding: 5px;
+  vertical-align: middle;
 }
-.search-results-table .search-result table tr:hover {
+.search-results-table .search-result.hover table tr:hover {
   background: #ceb598;
 }
 .search-results-table .search-result table tr td:first-child, .search-results-table .search-result table tr th:first-child {
@@ -467,4 +468,52 @@ input#quick_search_input + .search-modal.show {
 }
 input#quick_search_input + .search-modal tbody > tr {
   cursor: pointer;
+}
+
+.flex-row-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+img.motrSettings-smallLinkButton {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  padding: 2px;
+  cursor: pointer;
+  margin-right: 5px;
+  border: 1px solid #8796A3;
+  border-radius: 3px;
+}
+img.motrSettings-smallLinkButton + * {
+  vertical-align: middle;
+}
+
+.popup-container {
+  position: fixed;
+  padding: 5px;
+  border-radius: 5px;
+  background: #e2c6a5;
+  border: 1px solid #917657;
+  margin-bottom: -25px;
+  height: 25px;
+  -webkit-transition: margin-bottom 0.3s ease-out;
+  transition: margin-bottom 0.3s ease-out;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  z-index: 20;
+}
+.popup-container.show {
+  margin-bottom: 15px;
 }

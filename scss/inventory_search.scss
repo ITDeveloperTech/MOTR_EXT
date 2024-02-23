@@ -276,10 +276,12 @@ input.input_text {
       & table td {
          border: 1px solid #917657;
          padding: 5px;
+         vertical-align: middle;
       }
-      & table tr:hover {
+      &.hover table tr:hover {
          background: #ceb598;
       }
+      
       & table tr td:first-child, table tr th:first-child {
          border-left: none;
       }
@@ -327,5 +329,44 @@ input#quick_search_input {
       tbody > tr {
          cursor: pointer;
       }
+   }
+}
+
+.flex-row-center {
+   display: flex;
+   align-items: center;
+}
+
+img.motrSettings-smallLinkButton {
+   display: inline-block;
+   width: 24px;
+   height: 24px;
+   padding: 2px;
+   cursor: pointer;
+   margin-right: 5px;
+   border: 1px solid #8796A3;
+   border-radius: 3px;
+   & + * {
+      vertical-align: middle;
+   }
+}
+
+.popup-container {
+   position:fixed;
+   padding: 5px;
+   border-radius: 5px;
+   background: #e2c6a5;
+   border: 1px solid #917657;
+   margin-bottom: -25px;
+   height: 25px;
+   transition: margin-bottom 0.3s ease-out;
+   display: inline-flex;
+   justify-self: center;
+   bottom: 0;
+   left: 50%;
+   transform: translateX(-50%);
+   z-index: 20;
+   &.show {
+      margin-bottom: 15px;
    }
 }
