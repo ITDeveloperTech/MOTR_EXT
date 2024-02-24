@@ -146,6 +146,9 @@ header > img.logo {
 .settings-group {
   width: 100%;
 }
+.settings-group.hide {
+  display: none;
+}
 .settings-group > button {
   padding: 0 1em 0;
 }

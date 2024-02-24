@@ -47,6 +47,7 @@ chrome.tabs.onUpdated.addListener(
                                  target: { tabId: tabId },
                                  files: ["js/back/imageReplace.js"]
                               });
+                        break;
                         case "ms_vending_navi_clipboard":
                            chrome.scripting.executeScript(
                               {
@@ -72,6 +73,13 @@ chrome.tabs.onUpdated.addListener(
                                  files: ["js/back/imageReplace.js"]
                               });
                         break;
+                        case "ms_dev_items_id":
+                           chrome.scripting.executeScript(
+                              {
+                                 target: { tabId: tabId },
+                                 files: ["js/back/dev/itemID.js"]
+                              });
+                        break;
                      }
                   }
                });
@@ -88,6 +96,13 @@ chrome.tabs.onUpdated.addListener(
                               {
                                  target: { tabId: tabId },
                                  files: ["js/back/imageReplace.js"]
+                              });
+                        break;
+                        case "ms_dev_items_id":
+                           chrome.scripting.executeScript(
+                              {
+                                 target: { tabId: tabId },
+                                 files: ["js/back/dev/itemID.js"]
                               });
                         break;
                      }
@@ -126,6 +141,13 @@ chrome.tabs.onUpdated.addListener(
                                  files: ["js/back/imageReplace.js"]
                               });
                         break;
+                        case "ms_dev_items_id":
+                           chrome.scripting.executeScript(
+                              {
+                                 target: { tabId: tabId },
+                                 files: ["js/back/dev/itemID.js"]
+                              });
+                        break;
                      }
                   }
                });
@@ -142,6 +164,13 @@ chrome.tabs.onUpdated.addListener(
                               {
                                  target: { tabId: tabId },
                                  files: ["js/back/imageReplace.js"]
+                              });
+                        break;
+                        case "ms_dev_items_id":
+                           chrome.scripting.executeScript(
+                              {
+                                 target: { tabId: tabId },
+                                 files: ["js/back/dev/itemID.js"]
                               });
                         break;
                      }

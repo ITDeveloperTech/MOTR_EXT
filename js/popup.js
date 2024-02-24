@@ -4,6 +4,7 @@ const m_settings = {
    "ms_vending_navi_clipboard": false,
    "ms_calc_motr": false,
    "ms_divine_pride": false,
+   "ms_dev_items_id": false,
 
    "ms_popup_collapses": {
       "ms_group_main": false,
@@ -17,7 +18,10 @@ const m_settings = {
       "ms_group_locations_functions": false,
       "ms_group_vending": false,
       "ms_group_vending_settings": false,
-      "ms_group_vending_functions": false
+      "ms_group_vending_functions": false,
+      "ms_dev_tools": false,
+      "ms_dev_tools_settings": false,
+      "ms_dev_tools_functions": false
    }
 }
 
@@ -89,6 +93,7 @@ class PopupController {
    async setLogicEvents() {
       await this.setCheckboxFunctions();
       await this.setCollapseFunctions();
+      this.setDEVKeyTools();
    }
 
    async setCheckboxFunctions() {
@@ -116,6 +121,19 @@ class PopupController {
             });
          });
       }
+   }
+
+   setDEVKeyTools() {
+      document.body.addEventListener("keyup", (event) => {
+         if (event.code == "KeyZ" && event.ctrlKey) {
+            let divGroup = document.querySelector("div[name=ms_dev_tools]");
+            if (divGroup.classList.contains("hide")) {
+               divGroup.classList.remove("hide");
+            } else {
+               divGroup.classList.add("hide");
+            }
+         }
+      });
    }
 
    collapseToggle(collapseTag) {
