@@ -242,10 +242,15 @@ class InventorySearchController {
    }
 
    async initialize_item_database() {
+      this.show_loader("Загружается база данных групп предметов", "");
       this.itemsData = await this.fetch_json(`chrome-extension://${chrome.runtime.id}/js/back/search_items.json`);
+      let id = 0;
       for (let itemData of this.itemsData) {
+         id++;
+         this.update_loader(`${id} из ${this.itemsData.length} основных групп`);
          this.init_json_group(itemData);
       }
+      this.hide_loader();
    }
 
    async initialize_chars() {
