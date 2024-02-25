@@ -2343,21 +2343,14 @@
                   "items": [
                      {
                         "type": "group",
-                        "name": "Бросок Зелья",
-                        "id": "potion_pitcher",
-                        "items": [
-                           {
-                              "type": "link",
-                              "name": "Зелья",
-                              "link": "consumable-self_use-potions"
-                           }
-                        ]
-                     },
-                     {
-                        "type": "group",
                         "name": "Второпрофные скилы",
                         "id": "second_job_skills",
                         "items": [
+                           {
+                              "type": "link",
+                              "name": "Бросок Зелья",
+                              "link": "consumable-self_use-potions"
+                           },
                            {
                               "type": "item",
                               "name": "Бутылка с Морской Сферой",
