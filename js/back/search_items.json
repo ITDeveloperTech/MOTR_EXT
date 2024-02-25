@@ -42,7 +42,340 @@
                },
                {
                   "type": "group",
-                  "name": "Зелья",
+                  "name": "Кафра SHOP",
+                  "id": "kafra_shop",
+                  "items": [
+                     {
+                        "type": "group",
+                        "name": "Кафроеда",
+                        "id": "kafra_meal",
+                        "items": [
+                           {
+                              "type": "item",
+                              "name": "Язык на Пару (кафра)",
+                              "id": "cash_steamed_tongue",
+                              "item_id": 12202
+                           },
+                           {
+                              "type": "item",
+                              "name": "Пустынные Скорпионы на Пару (кафра)",
+                              "id": "cash_steamed_scorpion",
+                              "item_id": 12203
+                           },
+                           {
+                              "type": "item",
+                              "name": "Коктейль ''Дыхание Дракона'' (кафра)",
+                              "id": "cash_dragon_breath_cocktail",
+                              "item_id": 12204
+                           },
+                           {
+                              "type": "item",
+                              "name": "Тоник Хвергельмира (кафра)",
+                              "id": "cash_hwergelmir's_tonic",
+                              "item_id": 12205
+                           },
+                           {
+                              "type": "item",
+                              "name": "Блюдо Девяти Хвостов (кафра)",
+                              "id": "cash_cooked_nine_tail's_tails",
+                              "item_id": 12206
+                           },
+                           {
+                              "type": "item",
+                              "name": "Мясо Бессмертных (кафра)",
+                              "id": "cash_stew_of_immortality",
+                              "item_id": 12207
+                           }
+                        ]
+                     },
+                     {
+                        "type": "group",
+                        "name": "Расходные материалы и свитки",
+                        "id": "consum_and_scrolls",
+                        "items": [
+                           {
+                              "type": "item",
+                              "name": "Волшебное Зеркало",
+                              "id": "convex_mirror",
+                              "item_id": 12214
+                           },
+                           {
+                              "type": "item",
+                              "name": "Боевое Руководство",
+                              "id": "battle_manual",
+                              "item_id": 12208
+                           },
+                           {
+                              "type": "item",
+                              "name": "Страховка",
+                              "id": "life_insurance",
+                              "item_id": 12209
+                           },
+                           {
+                              "type": "item",
+                              "name": "Карточка Кафры",
+                              "id": "kafra_card",
+                              "item_id": 12211
+                           },
+                           {
+                              "type": "item",
+                              "name": "Гигантское Крыло Мухи",
+                              "id": "giant_fly_wing",
+                              "item_id": 12212
+                           },
+                           {
+                              "type": "item",
+                              "name": "Символ Зигфрида",
+                              "id": "token_of_siegfried",
+                              "item_id": 7621
+                           },
+                           {
+                              "type": "item",
+                              "name": "Мегафон",
+                              "id": "megaphone",
+                              "item_id": 7040
+                           },
+                           {
+                              "type": "item",
+                              "name": "Свиток Благословения Ур.10",
+                              "id": "lv10_blessing_scroll",
+                              "item_id": 12215
+                           },
+                           {
+                              "type": "item",
+                              "name": "Свиток Повышения Проворства Ур.10",
+                              "id": "lv10_agil_scroll",
+                              "item_id": 12216
+                           },
+                           {
+                              "type": "item",
+                              "name": "Свиток Асперсио Ур.5",
+                              "id": "lv5_aspersio_scroll",
+                              "item_id": 12217
+                           },
+                           {
+                              "type": "item",
+                              "name": "Свиток Поступи Ветра Ур.10",
+                              "id": "lv10_wind_walker_scroll",
+                              "item_id": 12219
+                           },
+                           {
+                              "type": "item",
+                              "name": "Свиток Выброса Адреналина Ур.5",
+                              "id": "lv5_adrenaline_scroll",
+                              "item_id": 12220
+                           },
+                           {
+                              "type": "item",
+                              "name": "Свиток Защиты Оружия",
+                              "id": "chemical_protection_weapon_scroll",
+                              "item_id": 14520
+                           },
+                           {
+                              "type": "item",
+                              "name": "Свиток Защиты Щита",
+                              "id": "chemical_protection_shield_scrol",
+                              "item_id": 14518
+                           }
+                        ]
+                     }
+                  ]
+               },
+               {
+                  "type": "group",
+                  "name": "Варка",
+                  "id": "brew",
+                  "items": [
+                     {
+                        "type": "group",
+                        "name": "Зелья Увеличения HP, SP",
+                        "id": "hp_sp_increase",
+                        "items": [
+                           {
+                              "type": "item",
+                              "name": "Зелье Увеличения HP (малое)",
+                              "id": "hp_increase_potion_(small)",
+                              "item_id": 12422
+                           },
+                           {
+                              "type": "item",
+                              "name": "Зелье Увеличения HP (среднее)",
+                              "id": "hp_increase_potion_(medium)",
+                              "item_id": 12423
+                           },
+                           {
+                              "type": "item",
+                              "name": "Зелье Увеличения HP (большое)",
+                              "id": "hp_increase_potion_(large)",
+                              "item_id": 12424
+                           },
+                           {
+                              "type": "item",
+                              "name": "Зелье Увеличения SP (малое)",
+                              "id": "sp_increase_potion_(small)",
+                              "item_id": 12425
+                           },
+                           {
+                              "type": "item",
+                              "name": "Зелье Увеличения SP (среднее)",
+                              "id": "sp_increase_potion_(medium)",
+                              "item_id": 12426
+                           },
+                           {
+                              "type": "item",
+                              "name": "Зелье Увеличения SP (большое)",
+                              "id": "sp_increase_potion_(large)",
+                              "item_id": 12427
+                           }
+                        ]
+                     },
+                     {
+                        "type": "group",
+                        "name": "Зелья жизни",
+                        "id": "true_live_potions",
+                        "items": [
+                           {
+                              "type": "item",
+                              "name": "Концентрат Малого Зелья Жизни",
+                              "id": "small",
+                              "item_id": 22817
+                           },
+                           {
+                              "type": "item",
+                              "name": "Концентрат Загадочного Зелья Жизни",
+                              "id": "mysterious",
+                              "item_id": 22816
+                           },
+                           {
+                              "type": "item",
+                              "name": "Концентрат Среднего Зелья Жизни",
+                              "id": "medium",
+                              "item_id": 22818
+                           }
+                        ]
+                     },
+                     {
+                        "type": "group",
+                        "name": "Миксы 20 статов",
+                        "id": "mixes_20_stats",
+                        "items": [
+                           {
+                              "type": "item",
+                              "name": "Целиком Обжаренный Дикарь",
+                              "id": "savage_full_roast",
+                              "item_id": 12429
+                           },
+                           {
+                              "type": "item",
+                              "name": "Коктейль из Крови Варга",
+                              "id": "cocktail_warg_blood",
+                              "item_id": 12430
+                           },
+                           {
+                              "type": "item",
+                              "name": "Томлёное Мясо",
+                              "id": "minor_stew",
+                              "item_id": 12431
+                           },
+                           {
+                              "type": "item",
+                              "name": "Холодный Чай 'Сирома'",
+                              "id": "siroma_iced_tea",
+                              "item_id": 12432
+                           },
+                           {
+                              "type": "item",
+                              "name": "Салат из Росянки",
+                              "id": "drosera_herb_salad",
+                              "item_id": 12433
+                           },
+                           {
+                              "type": "item",
+                              "name": "Лапша из Хвостов Петита",
+                              "id": "petite_tail_noodles",
+                              "item_id": 12434
+                           }
+                        ]
+                     },
+                     {
+                        "type": "item",
+                        "name": "Витата 500",
+                        "id": "vitata_500",
+                        "item_id": 12436
+                     },
+                     {
+                        "type": "item",
+                        "name": "Концентрат Всесилия",
+                        "id": "true_almighty",
+                        "item_id": 22819
+                     },
+                     {
+                        "type": "item",
+                        "name": "Освобождающее Лекарство",
+                        "id": "cure_free",
+                        "item_id": 12475
+                     }
+                  ]
+               },
+               {
+                  "type": "group",
+                  "name": "Сопротивления элементам",
+                  "id": "elemental_resist",
+                  "items": [
+                     {
+                        "type": "item",
+                        "name": "Зелье Сопротивления Огню",
+                        "id": "fire_resist_potion",
+                        "item_id": 12118
+                     },
+                     {
+                        "type": "item",
+                        "name": "Зелье Сопротивления Холоду",
+                        "id": "cold_resist_potion",
+                        "item_id": 12119
+                     },
+                     {
+                        "type": "item",
+                        "name": "Зелье Сопротивления Земле",
+                        "id": "earth_resist_potion",
+                        "item_id": 12120
+                     },
+                     {
+                        "type": "item",
+                        "name": "Зелье Сопротивления Воздуху",
+                        "id": "thunder_resist_potion",
+                        "item_id": 12121
+                     }
+                  ]
+               },
+               {
+                  "type": "group",
+                  "name": "Расход НМа",
+                  "id": "mid_camp",
+                  "items": [
+                     {
+                        "type": "item",
+                        "name": "Рунный Клубничный Пирог",
+                        "id": "rune_strawberry_cake",
+                        "item_id": 12319
+                     },
+                     {
+                        "type": "item",
+                        "name": "Шварцвальдский Ананасовый Юбилеум",
+                        "id": "schwartzwald_pine_jubilee",
+                        "item_id": 12320
+                     },
+                     {
+                        "type": "item",
+                        "name": "Арунафельцский Десертный Сендвич",
+                        "id": "arunafeltz_desert_sandwich",
+                        "item_id": 12321
+                     }
+                  ]
+               },
+               {
+                  "type": "group",
+                  "name": "Зелья Восстановления ХП/SP",
                   "id": "potions",
                   "items": [
                      {
@@ -150,8 +483,8 @@
                },
                {
                   "type": "group",
-                  "name": "Зелья ASPD",
-                  "id": "aspd_potions",
+                  "name": "Расход ASPD",
+                  "id": "aspd",
                   "items": [
                      {
                         "type": "item",
@@ -170,39 +503,32 @@
                         "name": "Зелье Берсерка",
                         "id": "berserk",
                         "item_id": 657
+                     },
+                     {
+                        "type": "item",
+                        "name": "Концентрированный Саламиновый Суп",
+                        "id": "concentrated_ceromain_soup",
+                        "item_id": 12437
+                     },
+                     {
+                        "type": "item",
+                        "name": "Конфетка из Гуараны",
+                        "id": "guarana_candy",
+                        "item_id": 12414
                      }
                   ]
                },
                {
                   "type": "group",
-                  "name": "Зелья жизни",
-                  "id": "true_live_potions",
-                  "items": [
-                     {
-                        "type": "item",
-                        "name": "Концентрат Малого Зелья Жизни",
-                        "id": "small",
-                        "item_id": 22817
-                     },
-                     {
-                        "type": "item",
-                        "name": "Концентрат Загадочного Зелья Жизни",
-                        "id": "mysterious",
-                        "item_id": 22816
-                     },
-                     {
-                        "type": "item",
-                        "name": "Концентрат Среднего Зелья Жизни",
-                        "id": "medium",
-                        "item_id": 22818
-                     }
-                  ]
-               },
-               {
-                  "type": "group",
-                  "name": "Микстуры",
+                  "name": "Микстуры и книга",
                   "id": "growth_potion",
                   "items": [
+                     {
+                        "type": "item",
+                        "name": "Боевое Руководство",
+                        "id": "battle_manual",
+                        "item_id": 12208
+                     },
                      {
                         "type": "item",
                         "name": "Микстура Развития (база)",
@@ -214,6 +540,379 @@
                         "name": "Микстура Проессионализма (джоб)",
                         "id": "jpotion",
                         "item_id": 23143
+                     }
+                  ]
+               },
+               {
+                  "type": "group",
+                  "name": "Расход с БГ",
+                  "id": "battleground",
+                  "items": [
+                     {
+                        "type": "item",
+                        "name": "Абразив",
+                        "id": "abrasive",
+                        "item_id": 14536
+                     },
+                     {
+                        "type": "item",
+                        "name": "Благословение Тира",
+                        "id": "tyr's_blessing",
+                        "item_id": 14601
+                     },
+                     {
+                        "type": "item",
+                        "name": "Большое Защитное Зелье",
+                        "id": "big_defense_potion",
+                        "item_id": 14542
+                     },
+                     {
+                        "type": "item",
+                        "name": "Большое Зелье Сопротивления Магии",
+                        "id": "big_magic_defense_potion",
+                        "item_id": 14544
+                     },
+                     {
+                        "type": "item",
+                        "name": "Вкусный Белый Рацион",
+                        "id": "tasty_white_ration",
+                        "item_id": 12270
+                     },
+                     {
+                        "type": "item",
+                        "name": "Вкусный Розовый Рацион",
+                        "id": "tasty_pink_ration",
+                        "item_id": 12269
+                     },
+                     {
+                        "type": "item",
+                        "name": "Зелье Регенерации",
+                        "id": "regeneration_potion",
+                        "item_id": 14537
+                     },
+                     {
+                        "type": "item",
+                        "name": "Малое Зелье Жизни",
+                        "id": "small_life_potion",
+                        "item_id": 14534
+                     },
+                     {
+                        "type": "item",
+                        "name": "Малое Зелье Защиты",
+                        "id": "small_defense_potion",
+                        "item_id": 14541
+                     },
+                     {
+                        "type": "item",
+                        "name": "Малое Зелье Сопротивления Магии",
+                        "id": "small_magic_defense_potion",
+                        "item_id": 14543
+                     },
+                     {
+                        "type": "item",
+                        "name": "Роскошный Обед E",
+                        "id": "manchu-han_imperial_feast",
+                        "item_id": 14608
+                     },
+                     {
+                        "type": "item",
+                        "name": "Роскошный Обед W",
+                        "id": "luxurious_western_food",
+                        "item_id": 14607
+                     }
+                  ]
+               },
+               {
+                  "type": "group",
+                  "name": "Сплегндид и Манук",
+                  "id": "manuk_splendid",
+                  "items": [
+                     {
+                        "type": "item",
+                        "name": "Вера Манука",
+                        "id": "manuk's_faith",
+                        "item_id": 12348
+                     },
+                     {
+                        "type": "item",
+                        "name": "Возможность Манука",
+                        "id": "manuk's_opportunity",
+                        "item_id": 12342
+                     },
+                     {
+                        "type": "item",
+                        "name": "Храбрость Манука",
+                        "id": "manuk's_courage",
+                        "item_id": 12343
+                     },
+                     {
+                        "type": "item",
+                        "name": "Люциолов Медовый Джем",
+                        "id": "luciola's_honey_jam",
+                        "item_id": 12345
+                     },
+                     {
+                        "type": "item",
+                        "name": "Слёзы Корнуса",
+                        "id": "cornus'_tears",
+                        "item_id": 12349
+                     },
+                     {
+                        "type": "item",
+                        "name": "Фруктовый Джем Жирянки",
+                        "id": "pinguicula's_fruit_jam",
+                        "item_id": 12344
+                     },
+                     {
+                        "type": "item",
+                        "name": "Снежный Лепесток",
+                        "id": "snow_flip",
+                        "item_id": 12812
+                     },
+                     {
+                        "type": "item",
+                        "name": "Лепесток Пиона",
+                        "id": "peony_mamy",
+                        "item_id": 12813
+                     },
+                     {
+                        "type": "item",
+                        "name": "Пахучая Трава",
+                        "id": "sadagui",
+                        "item_id": 12814
+                     },
+                     {
+                        "type": "item",
+                        "name": "Пыль Иггдрасиля",
+                        "id": "sequoia_dust",
+                        "item_id": 12815
+                     }
+                  ]
+               },
+               {
+                  "type": "group",
+                  "name": "Кошмарный Окольнир",
+                  "id": "nightmare_guild_war",
+                  "items": [
+                     {
+                        "type": "item",
+                        "name": "Зелье Снижения Силы",
+                        "id": "str_reduction_potion",
+                        "item_id": 22702
+                     },
+                     {
+                        "type": "item",
+                        "name": "Зелье Снижения Проворства",
+                        "id": "agi_reduction_potion",
+                        "item_id": 22703
+                     },
+                     {
+                        "type": "item",
+                        "name": "Зелье Снижения Живучести",
+                        "id": "vit_reduction_potion",
+                        "item_id": 22704
+                     },
+                     {
+                        "type": "item",
+                        "name": "Зелье Снижения Интеллекта",
+                        "id": "int_reduction_potion",
+                        "item_id": 22705
+                     },
+                     {
+                        "type": "item",
+                        "name": "Зелье Снижения Ловкости",
+                        "id": "dex_reduction_potion",
+                        "item_id": 22706
+                     },
+                     {
+                        "type": "item",
+                        "name": "Зелье Снижения Удачи",
+                        "id": "luk_reduction_potion",
+                        "item_id": 22707
+                     }
+                  ]
+               },
+               {
+                  "type": "group",
+                  "name": "Снятие статусов",
+                  "id": "status_clear",
+                  "items": [
+                     {
+                        "type": "item",
+                        "name": "Зелёная Трава",
+                        "id": "green_herb",
+                        "item_id": 511
+                     },
+                     {
+                        "type": "item",
+                        "name": "Зелёное Зелье",
+                        "id": "green_potion",
+                        "item_id": 506
+                     },
+                     {
+                        "type": "item",
+                        "name": "Освобождающее Лекарство",
+                        "id": "cure_free",
+                        "item_id": 12475
+                     },
+                     {
+                        "type": "item",
+                        "name": "Панацея",
+                        "id": "panacea",
+                        "item_id": 525
+                     },
+                     {
+                        "type": "item",
+                        "name": "Пыль Иггдрасиля",
+                        "id": "sequoia_dust",
+                        "item_id": 12815
+                     },
+                     {
+                        "type": "item",
+                        "name": "Пахучая Трава",
+                        "id": "sadagui",
+                        "item_id": 12814
+                     },
+                     {
+                        "type": "item",
+                        "name": "Лепесток Пиона",
+                        "id": "peony_mamy",
+                        "item_id": 12813
+                     },
+                     {
+                        "type": "item",
+                        "name": "Снежный Лепесток",
+                        "id": "snow_flip",
+                        "item_id": 12812
+                     },
+                     {
+                        "type": "item",
+                        "name": "Святая Вода",
+                        "id": "holy_water",
+                        "item_id": 523
+                     }
+                  ]
+               },
+               {
+                  "type": "group",
+                  "name": "Травы",
+                  "id": "herbs",
+                  "items": [
+                     {
+                        "type": "item",
+                        "name": "Зелёная Трава",
+                        "id": "green_herb",
+                        "item_id": 511
+                     }
+                  ]
+               },
+               {
+                  "type": "group",
+                  "name": "Коробки дроп карт",
+                  "id": "drop_card_boxes",
+                  "items": [
+                     {
+                        "type": "item",
+                        "name": "Коробка Бурь",
+                        "id": "box_of_storms",
+                        "item_id": 12032
+                     },
+                     {
+                        "type": "item",
+                        "name": "Коробка Возмущения",
+                        "id": "box_of_resentment",
+                        "item_id": 12030
+                     },
+                     {
+                        "type": "item",
+                        "name": "Коробка Грома",
+                        "id": "box_of_thunder",
+                        "item_id": 12028
+                     },
+                     {
+                        "type": "item",
+                        "name": "Коробка Мрака",
+                        "id": "box_of_gloom",
+                        "item_id": 12029
+                     },
+                     {
+                        "type": "item",
+                        "name": "Коробка Одышки",
+                        "id": "box_of_panting",
+                        "item_id": 12034
+                     },
+                     {
+                        "type": "item",
+                        "name": "Коробка Солнца",
+                        "id": "box_of_sunlight",
+                        "item_id": 12033
+                     },
+                     {
+                        "type": "item",
+                        "name": "Коробка Сонливости",
+                        "id": "box_of_drowsiness",
+                        "item_id": 12031
+                     },
+                     {
+                        "type": "item",
+                        "name": "Хихикающая Коробка",
+                        "id": "giggling_box",
+                        "item_id": 12027
+                     }
+                  ]
+               },
+               {
+                  "type": "group",
+                  "name": "Прочий Расход",
+                  "id": "another",
+                  "items": [
+                     {
+                        "type": "item",
+                        "name": "Базилик",
+                        "id": "basil",
+                        "item_id": 22985
+                     },
+                     {
+                        "type": "item",
+                        "name": "Буше Де Ноэль",
+                        "id": "buche_de_noel",
+                        "item_id": 12354
+                     },
+                     {
+                        "type": "item",
+                        "name": "Дух Воина",
+                        "id": "distilled_fighting_spirit",
+                        "item_id": 682
+                     },
+                     {
+                        "type": "item",
+                        "name": "Лист Иггдрасиля",
+                        "id": "yggdrasil_leaf",
+                        "item_id": 610
+                     },
+                     {
+                        "type": "item",
+                        "name": "Скоростное Зелье",
+                        "id": "speed_potion",
+                        "item_id": 12016
+                     },
+                     {
+                        "type": "item",
+                        "name": "Сумка Санты",
+                        "id": "santa's_bag",
+                        "item_id": 12132
+                     },
+                     {
+                        "type": "item",
+                        "name": "Трава Экзорцизма",
+                        "id": "herb_of_incantation",
+                        "item_id": 683
+                     },
+                     {
+                        "type": "item",
+                        "name": "Утверждающий Значок",
+                        "id": "authoritative_badge",
+                        "item_id": 662
                      }
                   ]
                }
