@@ -11,147 +11,6 @@
             "items": [
                {
                   "type": "group",
-                  "name": "Кафра SHOP",
-                  "id": "kafra_shop",
-                  "items": [
-                     {
-                        "type": "group",
-                        "name": "Кафроеда",
-                        "id": "kafra_meal",
-                        "items": [
-                           {
-                              "type": "item",
-                              "name": "Язык на Пару (кафра)",
-                              "id": "cash_steamed_tongue",
-                              "item_id": 12202
-                           },
-                           {
-                              "type": "item",
-                              "name": "Пустынные Скорпионы на Пару (кафра)",
-                              "id": "cash_steamed_scorpion",
-                              "item_id": 12203
-                           },
-                           {
-                              "type": "item",
-                              "name": "Коктейль ''Дыхание Дракона'' (кафра)",
-                              "id": "cash_dragon_breath_cocktail",
-                              "item_id": 12204
-                           },
-                           {
-                              "type": "item",
-                              "name": "Тоник Хвергельмира (кафра)",
-                              "id": "cash_hwergelmir's_tonic",
-                              "item_id": 12205
-                           },
-                           {
-                              "type": "item",
-                              "name": "Блюдо Девяти Хвостов (кафра)",
-                              "id": "cash_cooked_nine_tail's_tails",
-                              "item_id": 12206
-                           },
-                           {
-                              "type": "item",
-                              "name": "Мясо Бессмертных (кафра)",
-                              "id": "cash_stew_of_immortality",
-                              "item_id": 12207
-                           }
-                        ]
-                     },
-                     {
-                        "type": "group",
-                        "name": "Расходные материалы и свитки",
-                        "id": "consum_and_scrolls",
-                        "items": [
-                           {
-                              "type": "item",
-                              "name": "Волшебное Зеркало",
-                              "id": "convex_mirror",
-                              "item_id": 12214
-                           },
-                           {
-                              "type": "item",
-                              "name": "Боевое Руководство",
-                              "id": "battle_manual",
-                              "item_id": 12208
-                           },
-                           {
-                              "type": "item",
-                              "name": "Страховка",
-                              "id": "life_insurance",
-                              "item_id": 12209
-                           },
-                           {
-                              "type": "item",
-                              "name": "Карточка Кафры",
-                              "id": "kafra_card",
-                              "item_id": 12211
-                           },
-                           {
-                              "type": "item",
-                              "name": "Гигантское Крыло Мухи",
-                              "id": "giant_fly_wing",
-                              "item_id": 12212
-                           },
-                           {
-                              "type": "item",
-                              "name": "Символ Зигфрида",
-                              "id": "token_of_siegfried",
-                              "item_id": 7621
-                           },
-                           {
-                              "type": "item",
-                              "name": "Мегафон",
-                              "id": "megaphone",
-                              "item_id": 7040
-                           },
-                           {
-                              "type": "item",
-                              "name": "Свиток Благословения Ур.10",
-                              "id": "lv10_blessing_scroll",
-                              "item_id": 12215
-                           },
-                           {
-                              "type": "item",
-                              "name": "Свиток Повышения Проворства Ур.10",
-                              "id": "lv10_agil_scroll",
-                              "item_id": 12216
-                           },
-                           {
-                              "type": "item",
-                              "name": "Свиток Асперсио Ур.5",
-                              "id": "lv5_aspersio_scroll",
-                              "item_id": 12217
-                           },
-                           {
-                              "type": "item",
-                              "name": "Свиток Поступи Ветра Ур.10",
-                              "id": "lv10_wind_walker_scroll",
-                              "item_id": 12219
-                           },
-                           {
-                              "type": "item",
-                              "name": "Свиток Выброса Адреналина Ур.5",
-                              "id": "lv5_adrenaline_scroll",
-                              "item_id": 12220
-                           },
-                           {
-                              "type": "item",
-                              "name": "Свиток Защиты Оружия",
-                              "id": "chemical_protection_weapon_scroll",
-                              "item_id": 14520
-                           },
-                           {
-                              "type": "item",
-                              "name": "Свиток Защиты Щита",
-                              "id": "chemical_protection_shield_scrol",
-                              "item_id": 14518
-                           }
-                        ]
-                     }
-                  ]
-               },
-               {
-                  "type": "group",
                   "name": "Варка",
                   "id": "brew",
                   "items": [
@@ -1193,6 +1052,147 @@
                   "name": "Обмен лута/валюты",
                   "id": "exchange",
                   "items": [
+                     {
+                        "type": "group",
+                        "name": "Кафра SHOP",
+                        "id": "kafra_shop",
+                        "items": [
+                           {
+                              "type": "group",
+                              "name": "Кафроеда",
+                              "id": "kafra_meal",
+                              "items": [
+                                 {
+                                    "type": "item",
+                                    "name": "Язык на Пару (кафра)",
+                                    "id": "cash_steamed_tongue",
+                                    "item_id": 12202
+                                 },
+                                 {
+                                    "type": "item",
+                                    "name": "Пустынные Скорпионы на Пару (кафра)",
+                                    "id": "cash_steamed_scorpion",
+                                    "item_id": 12203
+                                 },
+                                 {
+                                    "type": "item",
+                                    "name": "Коктейль ''Дыхание Дракона'' (кафра)",
+                                    "id": "cash_dragon_breath_cocktail",
+                                    "item_id": 12204
+                                 },
+                                 {
+                                    "type": "item",
+                                    "name": "Тоник Хвергельмира (кафра)",
+                                    "id": "cash_hwergelmir's_tonic",
+                                    "item_id": 12205
+                                 },
+                                 {
+                                    "type": "item",
+                                    "name": "Блюдо Девяти Хвостов (кафра)",
+                                    "id": "cash_cooked_nine_tail's_tails",
+                                    "item_id": 12206
+                                 },
+                                 {
+                                    "type": "item",
+                                    "name": "Мясо Бессмертных (кафра)",
+                                    "id": "cash_stew_of_immortality",
+                                    "item_id": 12207
+                                 }
+                              ]
+                           },
+                           {
+                              "type": "group",
+                              "name": "Расходные материалы и свитки",
+                              "id": "consum_and_scrolls",
+                              "items": [
+                                 {
+                                    "type": "item",
+                                    "name": "Волшебное Зеркало",
+                                    "id": "convex_mirror",
+                                    "item_id": 12214
+                                 },
+                                 {
+                                    "type": "item",
+                                    "name": "Боевое Руководство",
+                                    "id": "battle_manual",
+                                    "item_id": 12208
+                                 },
+                                 {
+                                    "type": "item",
+                                    "name": "Страховка",
+                                    "id": "life_insurance",
+                                    "item_id": 12209
+                                 },
+                                 {
+                                    "type": "item",
+                                    "name": "Карточка Кафры",
+                                    "id": "kafra_card",
+                                    "item_id": 12211
+                                 },
+                                 {
+                                    "type": "item",
+                                    "name": "Гигантское Крыло Мухи",
+                                    "id": "giant_fly_wing",
+                                    "item_id": 12212
+                                 },
+                                 {
+                                    "type": "item",
+                                    "name": "Символ Зигфрида",
+                                    "id": "token_of_siegfried",
+                                    "item_id": 7621
+                                 },
+                                 {
+                                    "type": "item",
+                                    "name": "Мегафон",
+                                    "id": "megaphone",
+                                    "item_id": 7040
+                                 },
+                                 {
+                                    "type": "item",
+                                    "name": "Свиток Благословения Ур.10",
+                                    "id": "lv10_blessing_scroll",
+                                    "item_id": 12215
+                                 },
+                                 {
+                                    "type": "item",
+                                    "name": "Свиток Повышения Проворства Ур.10",
+                                    "id": "lv10_agil_scroll",
+                                    "item_id": 12216
+                                 },
+                                 {
+                                    "type": "item",
+                                    "name": "Свиток Асперсио Ур.5",
+                                    "id": "lv5_aspersio_scroll",
+                                    "item_id": 12217
+                                 },
+                                 {
+                                    "type": "item",
+                                    "name": "Свиток Поступи Ветра Ур.10",
+                                    "id": "lv10_wind_walker_scroll",
+                                    "item_id": 12219
+                                 },
+                                 {
+                                    "type": "item",
+                                    "name": "Свиток Выброса Адреналина Ур.5",
+                                    "id": "lv5_adrenaline_scroll",
+                                    "item_id": 12220
+                                 },
+                                 {
+                                    "type": "item",
+                                    "name": "Свиток Защиты Оружия",
+                                    "id": "chemical_protection_weapon_scroll",
+                                    "item_id": 14520
+                                 },
+                                 {
+                                    "type": "item",
+                                    "name": "Свиток Защиты Щита",
+                                    "id": "chemical_protection_shield_scrol",
+                                    "item_id": 14518
+                                 }
+                              ]
+                           }
+                        ]
+                     },
                      {
                         "type": "group",
                         "name": "Расход НМа",
